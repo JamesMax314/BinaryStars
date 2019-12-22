@@ -1,0 +1,5 @@
+/snap/clion/98/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug make -G "CodeBlocks - Unix Makefiles" /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src
+-- pybind11 v2.4.dev4
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/james/Documents/University/ComputingProject/Python
