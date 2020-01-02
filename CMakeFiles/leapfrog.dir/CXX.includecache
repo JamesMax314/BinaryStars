@@ -17,6 +17,8 @@ algorithm
 -
 iostream
 -
+omp.h
+-
 bodies.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.h
 trees.h
