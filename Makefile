@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/james/Documents/University/ComputingProject/Python
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/99/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/snap/clion/99/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named treecode
+
+# Build rule for target.
+treecode: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 treecode
+.PHONY : treecode
+
+# fast build rule for target.
+treecode/fast:
+	$(MAKE) -f CMakeFiles/treecode.dir/build.make CMakeFiles/treecode.dir/build
+.PHONY : treecode/fast
+
+#=============================================================================
 # Target rules for targets named bodies
 
 # Build rule for target.
@@ -135,6 +148,19 @@ vecMaths: cmake_check_build_system
 vecMaths/fast:
 	$(MAKE) -f CMakeFiles/vecMaths.dir/build.make CMakeFiles/vecMaths.dir/build
 .PHONY : vecMaths/fast
+
+#=============================================================================
+# Target rules for targets named poisson
+
+# Build rule for target.
+poisson: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 poisson
+.PHONY : poisson
+
+# fast build rule for target.
+poisson/fast:
+	$(MAKE) -f CMakeFiles/poisson.dir/build.make CMakeFiles/poisson.dir/build
+.PHONY : poisson/fast
 
 #=============================================================================
 # Target rules for targets named leapfrog
@@ -174,19 +200,6 @@ treeShow: cmake_check_build_system
 treeShow/fast:
 	$(MAKE) -f CMakeFiles/treeShow.dir/build.make CMakeFiles/treeShow.dir/build
 .PHONY : treeShow/fast
-
-#=============================================================================
-# Target rules for targets named treecode
-
-# Build rule for target.
-treecode: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 treecode
-.PHONY : treecode
-
-# fast build rule for target.
-treecode/fast:
-	$(MAKE) -f CMakeFiles/treecode.dir/build.make CMakeFiles/treecode.dir/build
-.PHONY : treecode/fast
 
 bodies.o: bodies.cpp.o
 
@@ -241,6 +254,33 @@ leapfrog.s: leapfrog.cpp.s
 leapfrog.cpp.s:
 	$(MAKE) -f CMakeFiles/leapfrog.dir/build.make CMakeFiles/leapfrog.dir/leapfrog.cpp.s
 .PHONY : leapfrog.cpp.s
+
+poisson.o: poisson.cpp.o
+
+.PHONY : poisson.o
+
+# target to build an object file
+poisson.cpp.o:
+	$(MAKE) -f CMakeFiles/poisson.dir/build.make CMakeFiles/poisson.dir/poisson.cpp.o
+.PHONY : poisson.cpp.o
+
+poisson.i: poisson.cpp.i
+
+.PHONY : poisson.i
+
+# target to preprocess a source file
+poisson.cpp.i:
+	$(MAKE) -f CMakeFiles/poisson.dir/build.make CMakeFiles/poisson.dir/poisson.cpp.i
+.PHONY : poisson.cpp.i
+
+poisson.s: poisson.cpp.s
+
+.PHONY : poisson.s
+
+# target to generate assembly for a file
+poisson.cpp.s:
+	$(MAKE) -f CMakeFiles/poisson.dir/build.make CMakeFiles/poisson.dir/poisson.cpp.s
+.PHONY : poisson.cpp.s
 
 pyInterface.o: pyInterface.cpp.o
 
@@ -356,20 +396,24 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... treecode"
 	@echo "... bodies"
 	@echo "... vecMaths"
+	@echo "... edit_cache"
+	@echo "... poisson"
 	@echo "... leapfrog"
 	@echo "... trees"
 	@echo "... treeShow"
-	@echo "... rebuild_cache"
-	@echo "... treecode"
 	@echo "... bodies.o"
 	@echo "... bodies.i"
 	@echo "... bodies.s"
 	@echo "... leapfrog.o"
 	@echo "... leapfrog.i"
 	@echo "... leapfrog.s"
+	@echo "... poisson.o"
+	@echo "... poisson.i"
+	@echo "... poisson.s"
 	@echo "... pyInterface.o"
 	@echo "... pyInterface.i"
 	@echo "... pyInterface.s"

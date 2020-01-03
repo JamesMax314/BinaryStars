@@ -17,11 +17,65 @@
 					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
+			<Target title="rebuild_cache">
 				<Option working_dir="/home/james/Documents/University/ComputingProject/Python"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="treecode">
+				<Option output="/home/james/Documents/University/ComputingProject/Python/treecode.cpython-36m-x86_64-linux-gnu.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/james/Documents/University/ComputingProject/Python"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/Include/pybind11/include"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src"/>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/./Include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 treecode"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="treecode/fast">
+				<Option output="/home/james/Documents/University/ComputingProject/Python/treecode.cpython-36m-x86_64-linux-gnu.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/james/Documents/University/ComputingProject/Python"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/Include/pybind11/include"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src"/>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/./Include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 treecode/fast"/>
 					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
@@ -122,6 +176,66 @@
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 vecMaths/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/james/Documents/University/ComputingProject/Python"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="poisson">
+				<Option output="/home/james/Documents/University/ComputingProject/Python/libpoisson.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/james/Documents/University/ComputingProject/Python"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src"/>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/./Include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 poisson"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="poisson/fast">
+				<Option output="/home/james/Documents/University/ComputingProject/Python/libpoisson.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/james/Documents/University/ComputingProject/Python"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src"/>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/./Include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 poisson/fast"/>
 					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
@@ -277,70 +391,6 @@
 					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/james/Documents/University/ComputingProject/Python"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="treecode">
-				<Option output="/home/james/Documents/University/ComputingProject/Python/treecode.cpython-36m-x86_64-linux-gnu.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/james/Documents/University/ComputingProject/Python"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/Include/pybind11/include"/>
-					<Add directory="/usr/include/python3.6m"/>
-					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src"/>
-					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/./Include"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 treecode"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="treecode/fast">
-				<Option output="/home/james/Documents/University/ComputingProject/Python/treecode.cpython-36m-x86_64-linux-gnu.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/james/Documents/University/ComputingProject/Python"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/Include/pybind11/include"/>
-					<Add directory="/usr/include/python3.6m"/>
-					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src"/>
-					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/./Include"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 treecode/fast"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 		</Build>
 		<Unit filename="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.cpp">
 			<Option target="bodies"/>
@@ -353,6 +403,12 @@
 		</Unit>
 		<Unit filename="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/leapfrog.h">
 			<Option target="leapfrog"/>
+		</Unit>
+		<Unit filename="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.cpp">
+			<Option target="poisson"/>
+		</Unit>
+		<Unit filename="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.h">
+			<Option target="poisson"/>
 		</Unit>
 		<Unit filename="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/pyInterface.cpp">
 			<Option target="treecode"/>

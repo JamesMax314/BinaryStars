@@ -17,7 +17,6 @@ def two_body_init(m_1, m_2, r):
     r_2 = np.abs(m_1 * r / (m_1 + m_2))
     v_1 = np.sqrt((G * m_2 * np.abs(r_1)) / r ** 2)
     v_2 = np.sqrt((G * m_1 * np.abs(r_2)) / r ** 2)
-    print(r_1, r_2)
     _arr_bodies = np.array([])
     _arr_bodies = np.append(_arr_bodies, lfEngine.Body([r_1, 0, 0], [0, v_1, 0], m_1))
     _arr_bodies = np.append(_arr_bodies, lfEngine.Body([r_2, 0, 0], [0, -v_2, 0], m_2))
@@ -45,7 +44,6 @@ def periodic(loc, mass, dim):
         for y in range(-2, 3):
             for z in range(-2, 3):
                 displacement = dim * np.array([x, y, x]) / 2
-                print(displacement)
                 if np.abs(displacement[0]) >= dim / 2 and \
                         np.abs(displacement[1]) >= dim / 2 and \
                         np.abs(displacement[2]) >= dim / 2:
@@ -64,7 +62,7 @@ if __name__ == "__main__":
     m_2 = 1.6e25
     r_1_2 = 14.6e9
     dim = 1e11
-    N = 10
+    N = 1000
 
     arr_bodies = two_body_init(m_1, m_2, r_1_2)
     arr_bodies = lfEngine.half_step(arr_bodies, dt)
@@ -80,7 +78,7 @@ if __name__ == "__main__":
     dmPointMass = dmMass/N
     dm, loc, mass = dm_array(dmPointMass, dmPointMass, N, dim)
     _arr_bodies = np.append(_arr_bodies, dm)
-    perimitor = periodic(loc, mass, dim)
+    # perimitor = periodic(loc, mass, dim)
 
     arrCent = np.array([0, 0, 0])
     uniDim = np.array([1e15] * 3)
@@ -90,8 +88,8 @@ if __name__ == "__main__":
 
     # print("ok")
 
-    colours = ["orange", "purple"]
-    colours.append(["grey"] * (len(_arr_bodies)-2))
+    colours = np.array([0, 0.1])
+    colours = np.append(colours, np.array([0.5] * (len(_arr_bodies)-2)))
 
     mation = anim.twoD(b, colours, dim, 1e-12, 10)
     # mation.animate(10)

@@ -79,13 +79,9 @@ treecode_EXTERNAL_OBJECTS =
 
 treecode.cpython-36m-x86_64-linux-gnu.so: CMakeFiles/treecode.dir/pyInterface.cpp.o
 treecode.cpython-36m-x86_64-linux-gnu.so: CMakeFiles/treecode.dir/build.make
-treecode.cpython-36m-x86_64-linux-gnu.so: libtrees.a
-treecode.cpython-36m-x86_64-linux-gnu.so: libvecMaths.a
-treecode.cpython-36m-x86_64-linux-gnu.so: libleapfrog.a
-treecode.cpython-36m-x86_64-linux-gnu.so: libbodies.a
-treecode.cpython-36m-x86_64-linux-gnu.so: libtreeShow.a
 treecode.cpython-36m-x86_64-linux-gnu.so: CMakeFiles/treecode.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module treecode.cpython-36m-x86_64-linux-gnu.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library treecode.cpython-36m-x86_64-linux-gnu.so"
+	$(CMAKE_COMMAND) -P CMakeFiles/treecode.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/treecode.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/strip /home/james/Documents/University/ComputingProject/Python/treecode.cpython-36m-x86_64-linux-gnu.so
 

@@ -291,7 +291,7 @@ pybind11_SOURCE_DIR:STATIC=/home/james/Documents/University/ComputingProject/lea
 treecode_BINARY_DIR:STATIC=/home/james/Documents/University/ComputingProject/Python
 
 //Dependencies for the target
-treecode_LIB_DEPENDS:STATIC=general;trees;general;vecMaths;general;leapfrog;general;bodies;general;treeShow;
+treecode_LIB_DEPENDS:STATIC=general;trees;general;vecMaths;general;leapfrog;general;bodies;general;treeShow;general;poisson;
 
 //Value Computed by CMake
 treecode_SOURCE_DIR:STATIC=/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src

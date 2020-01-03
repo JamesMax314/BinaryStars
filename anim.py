@@ -17,7 +17,7 @@ class twoD():
         lim = self.border + dim * scale
         self.fig = plt.figure()
         self.ax = plt.axes(xlim=(-lim, lim), ylim=(-lim, lim))
-        self.points, = self.ax.plot([], [], 'bo', ms=6)
+        self.points = self.ax.scatter([], [], cmap="jet")
 
         self.arrB = np.empty([len(self.system), np.shape(np.array(self.system[1].pos))[0],
                               np.shape(np.array(self.system[1].pos))[1]])
@@ -26,11 +26,13 @@ class twoD():
         self.frames = int(np.shape(self.arrB)[1] / sampling)
 
     def init(self):
-        self.points.set_data([], [])
+        self.points.set_offsets([])
         return self.points
 
     def animate(self, i):
-        self.points.set_data([self.arrB[:, i*self.interval, 0]], [self.arrB[:, i*self.interval, 1]])
+        offsets = np.transpose([self.arrB[:, i*self.interval, 0], self.arrB[:, i*self.interval, 1]])
+        self.points.set_offsets(offsets)
+        self.points.set_array(self.colours)
         return self.points
 
     def run(self, name):
