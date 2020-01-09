@@ -158,6 +158,14 @@ bodies.h
 trees.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/trees.h
 
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.h
+bodies.h
+-
+fftw3.h
+-
+bodies.h
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.h
+
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/pyInterface.cpp
 iostream
 -
@@ -177,6 +185,8 @@ pyInterface.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/pyInterface.h
 treeShow.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/treeShow.h
+poisson.h
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.h
 
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/pyInterface.h
 trees.h

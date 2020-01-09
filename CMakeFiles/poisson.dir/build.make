@@ -60,15 +60,15 @@ include CMakeFiles/poisson.dir/flags.make
 CMakeFiles/poisson.dir/poisson.cpp.o: CMakeFiles/poisson.dir/flags.make
 CMakeFiles/poisson.dir/poisson.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/poisson.dir/poisson.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/poisson.dir/poisson.cpp.o -c /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.cpp
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/poisson.dir/poisson.cpp.o -c /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.cpp
 
 CMakeFiles/poisson.dir/poisson.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/poisson.dir/poisson.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.cpp > CMakeFiles/poisson.dir/poisson.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.cpp > CMakeFiles/poisson.dir/poisson.cpp.i
 
 CMakeFiles/poisson.dir/poisson.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/poisson.dir/poisson.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.cpp -o CMakeFiles/poisson.dir/poisson.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.cpp -o CMakeFiles/poisson.dir/poisson.cpp.s
 
 # Object files for target poisson
 poisson_OBJECTS = \

@@ -60,15 +60,15 @@ include CMakeFiles/bodies.dir/flags.make
 CMakeFiles/bodies.dir/bodies.cpp.o: CMakeFiles/bodies.dir/flags.make
 CMakeFiles/bodies.dir/bodies.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/bodies.dir/bodies.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bodies.dir/bodies.cpp.o -c /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.cpp
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bodies.dir/bodies.cpp.o -c /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.cpp
 
 CMakeFiles/bodies.dir/bodies.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bodies.dir/bodies.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.cpp > CMakeFiles/bodies.dir/bodies.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.cpp > CMakeFiles/bodies.dir/bodies.cpp.i
 
 CMakeFiles/bodies.dir/bodies.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bodies.dir/bodies.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.cpp -o CMakeFiles/bodies.dir/bodies.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.cpp -o CMakeFiles/bodies.dir/bodies.cpp.s
 
 # Object files for target bodies
 bodies_OBJECTS = \

@@ -4,4 +4,5 @@
 CMakeFiles/poisson.dir/poisson.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.h
 CMakeFiles/poisson.dir/poisson.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.cpp
 CMakeFiles/poisson.dir/poisson.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.h
+CMakeFiles/poisson.dir/poisson.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/vecMaths.h
 

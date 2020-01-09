@@ -60,15 +60,15 @@ include CMakeFiles/vecMaths.dir/flags.make
 CMakeFiles/vecMaths.dir/vecMaths.cpp.o: CMakeFiles/vecMaths.dir/flags.make
 CMakeFiles/vecMaths.dir/vecMaths.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/vecMaths.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/vecMaths.dir/vecMaths.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vecMaths.dir/vecMaths.cpp.o -c /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/vecMaths.cpp
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vecMaths.dir/vecMaths.cpp.o -c /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/vecMaths.cpp
 
 CMakeFiles/vecMaths.dir/vecMaths.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vecMaths.dir/vecMaths.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/vecMaths.cpp > CMakeFiles/vecMaths.dir/vecMaths.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/vecMaths.cpp > CMakeFiles/vecMaths.dir/vecMaths.cpp.i
 
 CMakeFiles/vecMaths.dir/vecMaths.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vecMaths.dir/vecMaths.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/vecMaths.cpp -o CMakeFiles/vecMaths.dir/vecMaths.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/vecMaths.cpp -o CMakeFiles/vecMaths.dir/vecMaths.cpp.s
 
 # Object files for target vecMaths
 vecMaths_OBJECTS = \

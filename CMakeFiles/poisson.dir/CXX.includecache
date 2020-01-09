@@ -11,14 +11,18 @@ vector
 -
 
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.cpp
-complex
--
 fftw3.h
 -
 vector
 -
 cmath
 -
+iostream
+-
+omp.h
+-
+vecMaths.h
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/vecMaths.h
 poisson.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.h
 
@@ -29,4 +33,8 @@ fftw3.h
 -
 bodies.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.h
+
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/vecMaths.h
+vector
+-
 

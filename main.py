@@ -56,7 +56,7 @@ def periodic(loc, mass, dim):
 
 if __name__ == "__main__":
     dt = 10 * 24 * 3600
-    n_iter = 110 * 360 * 24 * 3600 / dt
+    n_iter = 360 * 24 * 3600 / dt
 
     m_1 = 2e25
     m_2 = 1.6e25
@@ -77,14 +77,19 @@ if __name__ == "__main__":
     dmMass = dmDen*vol
     dmPointMass = dmMass/N
     dm, loc, mass = dm_array(dmPointMass, dmPointMass, N, dim)
-    _arr_bodies = np.append(_arr_bodies, dm)
+    # _arr_bodies = np.append(_arr_bodies, dm)
+    _arr_bodies = dm
     # perimitor = periodic(loc, mass, dim)
+    particle1 = tree.body(m_1, [0, 0, 0], [1000, 0, 0], [0] * 3)
+    _arr_bodies = np.append(particle1, _arr_bodies)
 
     arrCent = np.array([0, 0, 0])
     uniDim = np.array([1e15] * 3)
     # b = tree.fixedBoundary(_arr_bodies, perimitor, arrCent, uniDim, int(n_iter), dt)
     # result = lfEngine.execute(arr_bodies, dt, int(n_iter))
     b = tree.basicRun(_arr_bodies, arrCent, uniDim, int(n_iter), dt)
+    # spacing = 1e11 / 100
+    # b = tree.particleMesh(_arr_bodies, spacing, 1e11, 1000, dt)
 
     # print("ok")
 

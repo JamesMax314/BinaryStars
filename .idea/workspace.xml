@@ -4,22 +4,40 @@
     <list default="true" id="85b2037a-2ec7-42ad-be08-86c5bb37f617" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/bodies.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/bodies.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/bodies.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/bodies.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/clion-environment.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/treeShow.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treeShow.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/leapfrog.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/leapfrog.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/leapfrog.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/leapfrog.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/leapfrog.dir/leapfrog.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/leapfrog.dir/leapfrog.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/poisson.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/poisson.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/poisson.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/poisson.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/poisson.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/poisson.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/poisson.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/poisson.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/poisson.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/poisson.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/poisson.dir/poisson.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/poisson.dir/poisson.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treeShow.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treeShow.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treeShow.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treeShow.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/cmake_clean_target.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/pyInterface.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/pyInterface.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/trees.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/trees.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/vecMaths.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/vecMaths.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anim.py" beforeDir="false" afterPath="$PROJECT_DIR$/anim.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/trees.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/trees.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/trees.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/trees.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/vecMaths.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/vecMaths.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/vecMaths.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/vecMaths.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libleapfrog.a" beforeDir="false" afterPath="$PROJECT_DIR$/libleapfrog.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libpoisson.a" beforeDir="false" afterPath="$PROJECT_DIR$/libpoisson.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/test.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treecode.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/treecode.cbp" afterDir="false" />
@@ -106,12 +124,31 @@
       <workItem from="1577969502257" duration="4354000" />
       <workItem from="1577982157188" duration="1889000" />
       <workItem from="1578055709085" duration="85000" />
-      <workItem from="1578078602092" duration="926000" />
+      <workItem from="1578078602092" duration="2969000" />
+      <workItem from="1578088417027" duration="775000" />
+      <workItem from="1578157296091" duration="8993000" />
+      <workItem from="1578222731305" duration="7172000" />
+      <workItem from="1578303417491" duration="6854000" />
+      <workItem from="1578331664908" duration="1977000" />
+      <workItem from="1578587031600" duration="579000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="141" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576929670868">
@@ -130,42 +167,51 @@
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="441" y="71" key="#xdebugger.evaluate/0.0.1366.736@0.0.1366.736" timestamp="1576960316415" />
-    <state x="100" y="100" width="1166" height="536" key="DiffContextDialog" timestamp="1576930061868">
-      <screen x="0" y="0" width="1366" height="736" />
+    <state x="141" y="142" width="1639" height="764" key="DiffContextDialog" timestamp="1578081812051">
+      <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="100" y="100" width="1166" height="536" key="DiffContextDialog/0.0.1366.736@0.0.1366.736" timestamp="1576930061868" />
-    <state width="1320" height="173" key="GridCell.Tab.0.bottom" timestamp="1577977064910">
-      <screen x="0" y="0" width="1366" height="736" />
+    <state x="141" y="142" width="1639" height="764" key="DiffContextDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1578081812051" />
+    <state width="1874" height="155" key="GridCell.Tab.0.bottom" timestamp="1578587463598">
+      <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.0.bottom/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1320" height="173" key="GridCell.Tab.0.center" timestamp="1577977064910">
-      <screen x="0" y="0" width="1366" height="736" />
+    <state width="1874" height="155" key="GridCell.Tab.0.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1578587463598" />
+    <state width="1874" height="155" key="GridCell.Tab.0.center" timestamp="1578587463598">
+      <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.0.center/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1320" height="173" key="GridCell.Tab.0.left" timestamp="1577977064910">
-      <screen x="0" y="0" width="1366" height="736" />
+    <state width="1874" height="155" key="GridCell.Tab.0.center/0.0.1920.1048@0.0.1920.1048" timestamp="1578587463598" />
+    <state width="1874" height="155" key="GridCell.Tab.0.left" timestamp="1578587463598">
+      <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.0.left/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1320" height="173" key="GridCell.Tab.0.right" timestamp="1577977064910">
-      <screen x="0" y="0" width="1366" height="736" />
+    <state width="1874" height="155" key="GridCell.Tab.0.left/0.0.1920.1048@0.0.1920.1048" timestamp="1578587463598" />
+    <state width="1874" height="155" key="GridCell.Tab.0.right" timestamp="1578587463598">
+      <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.0.right/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1320" height="173" key="GridCell.Tab.1.bottom" timestamp="1577977064910">
-      <screen x="0" y="0" width="1366" height="736" />
+    <state width="1874" height="155" key="GridCell.Tab.0.right/0.0.1920.1048@0.0.1920.1048" timestamp="1578587463598" />
+    <state width="1874" height="155" key="GridCell.Tab.1.bottom" timestamp="1578587463599">
+      <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.1.bottom/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1320" height="173" key="GridCell.Tab.1.center" timestamp="1577977064910">
-      <screen x="0" y="0" width="1366" height="736" />
+    <state width="1874" height="155" key="GridCell.Tab.1.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1578587463599" />
+    <state width="1874" height="155" key="GridCell.Tab.1.center" timestamp="1578587463599">
+      <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.1.center/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1320" height="173" key="GridCell.Tab.1.left" timestamp="1577977064910">
-      <screen x="0" y="0" width="1366" height="736" />
+    <state width="1874" height="155" key="GridCell.Tab.1.center/0.0.1920.1048@0.0.1920.1048" timestamp="1578587463599" />
+    <state width="1874" height="155" key="GridCell.Tab.1.left" timestamp="1578587463599">
+      <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.1.left/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1320" height="173" key="GridCell.Tab.1.right" timestamp="1577977064910">
-      <screen x="0" y="0" width="1366" height="736" />
+    <state width="1874" height="155" key="GridCell.Tab.1.left/0.0.1920.1048@0.0.1920.1048" timestamp="1578587463599" />
+    <state width="1874" height="155" key="GridCell.Tab.1.right" timestamp="1578587463599">
+      <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.1.right/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
+    <state width="1874" height="155" key="GridCell.Tab.1.right/0.0.1920.1048@0.0.1920.1048" timestamp="1578587463599" />
     <state x="172" y="3" key="SettingsEditor" timestamp="1576929715410">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
@@ -174,11 +220,11 @@
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state width="683" height="368" key="XDebugger.FullValuePopup/0.0.1366.736@0.0.1366.736" timestamp="1577971324145" />
-    <state x="476" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1578078602019">
+    <state x="476" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1578587031793">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="339" y="195" key="com.intellij.ide.util.TipDialog/0.0.1366.736@0.0.1366.736" timestamp="1578055709162" />
-    <state x="476" y="278" key="com.intellij.ide.util.TipDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1578078602019" />
+    <state x="476" y="278" key="com.intellij.ide.util.TipDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1578587031793" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -192,6 +238,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Python$main.coverage" NAME="main Coverage Results" MODIFIED="1577971389766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python$main.coverage" NAME="main Coverage Results" MODIFIED="1578587353787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
