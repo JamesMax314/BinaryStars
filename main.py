@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import treecode as tree
+import pickle as pkl
 import lfEngine
 import anim
 import time
@@ -23,10 +24,36 @@ def two_body_init(m_1, m_2, r):
     return _arr_bodies
 
 
+def polarCartesian(rad, theta, phi):
+    rad = rad**(1/3)
+    return np.array([rad*np.sin(theta)*np.cos(phi), rad*np.sin(theta)*np.sin(phi), rad*np.cos(theta)])
+
+
 def dm_array(min, max, num, dim, centre=np.array([0] * 3), temp=2.73):
-    locations = np.random.uniform(-dim / 2, dim / 2, [num, 3]) + centre * num
+    phis = np.random.uniform(0, 2*np.pi, [num])
+    thetas = np.random.uniform(0, np.pi, [num])
+    rads = np.random.uniform(0, np.pi*(dim/2)**3, [num]) # accounts for the uniform distribution
+    # over volume i.e. uniform on r^3
+    locations = polarCartesian(rads, thetas, phis)
+    locations = np.transpose(locations)
+
+    # locations = np.random.uniform(-dim / 2, dim / 2, [num, 3]) + centre * num
     masses = np.random.uniform(min, max, [num])
-    velocities = np.random.uniform(0, 1, [num, 3]) * np.transpose(np.array([np.sqrt(kb * temp / masses)] * 3))
+    velocities = np.random.uniform(-1, 1, [num, 3]) #* np.transpose(np.array([np.sqrt(kb * temp / masses)] * 3))
+
+    energy = 0
+    for i in range(len(masses)):
+        f = 0
+        for j in range(len(masses)):
+            if (i != j):
+                f += G*masses[i]*masses[j]*np.abs(locations[i] - locations[j])**(-3) * (-locations[i] + locations[j])
+        energy += -1/2 * np.dot(f, locations[i])
+
+    for i in range(len(masses)):
+        scaling = np.sqrt(energy*2 / masses[i])
+        velocities[i] = scaling * velocities[i] / np.abs(velocities[i])
+
+    velocities = np.zeros([num, 3])
 
     arrBods = np.array([])
     loc = np.empty([num, 3])
@@ -35,6 +62,8 @@ def dm_array(min, max, num, dim, centre=np.array([0] * 3), temp=2.73):
         loc[i] = locations[i]
         mass[i] = masses[i]
         arrBods = np.append(arrBods, tree.body(masses[i], locations[i], velocities[i], [0] * 3))
+
+
     return arrBods, loc, mass
 
 
@@ -55,14 +84,14 @@ def periodic(loc, mass, dim):
 
 
 if __name__ == "__main__":
-    dt = 10 * 24 * 3600
-    n_iter = 360 * 24 * 3600 / dt
+    dt = 1e18
+    n_iter = 1000
 
-    m_1 = 2e25
-    m_2 = 1.6e25
+    m_1 = 1e20
+    m_2 = 1e20
     r_1_2 = 14.6e9
     dim = 1e11
-    N = 1000
+    N = 100
 
     arr_bodies = two_body_init(m_1, m_2, r_1_2)
     arr_bodies = lfEngine.half_step(arr_bodies, dt)
@@ -72,7 +101,7 @@ if __name__ == "__main__":
         # print(body.r)
         _arr_bodies = np.append(_arr_bodies, tree.body(np.real(body.m), np.real(body.r), np.real(body.v), [0] * 3))
 
-    dmDen = 6e-22
+    dmDen = 4e-20
     vol = dim**2
     dmMass = dmDen*vol
     dmPointMass = dmMass/N
@@ -80,25 +109,32 @@ if __name__ == "__main__":
     # _arr_bodies = np.append(_arr_bodies, dm)
     _arr_bodies = dm
     # perimitor = periodic(loc, mass, dim)
-    particle1 = tree.body(m_1, [0, 0, 0], [1000, 0, 0], [0] * 3)
-    _arr_bodies = np.append(particle1, _arr_bodies)
+    particle1 = tree.body(m_1, [0, 0, 0], [100, 0, 0], [0] * 3)
+    particle2 = tree.body(m_2, [-1e10, 0, 0], [-100, 0, 0], [0] * 3)
+    # _arr_bodies = np.append(particle1, _arr_bodies)
+    # _arr_bodies = np.append(particle2, _arr_bodies)
+    # _arr_bodies = np.append(_arr_bodies, dm)
 
     arrCent = np.array([0, 0, 0])
     uniDim = np.array([1e15] * 3)
-    # b = tree.fixedBoundary(_arr_bodies, perimitor, arrCent, uniDim, int(n_iter), dt)
-    # result = lfEngine.execute(arr_bodies, dt, int(n_iter))
     b = tree.basicRun(_arr_bodies, arrCent, uniDim, int(n_iter), dt)
-    # spacing = 1e11 / 100
-    # b = tree.particleMesh(_arr_bodies, spacing, 1e11, 1000, dt)
 
-    # print("ok")
-
-    colours = np.array([0, 0.1])
+    colours = np.array([0, 0.25])
     colours = np.append(colours, np.array([0.5] * (len(_arr_bodies)-2)))
+
+    forces = np.empty([len(b), len(b[0].acc), 3])
+
+    # for i in range(len(b)):
+    #     acc = np.array(b[i].acc)
+    #     mass = b[i].mass[0]
+    #     forces[i] = acc * mass
 
     mation = anim.twoD(b, colours, dim, 1e-12, 10)
     # mation.animate(10)
     mation.run("test.mp4")
+    plt.show()
+
+    plt.plot(forces[1, :, 0])
     plt.show()
 
 
