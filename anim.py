@@ -17,7 +17,7 @@ class twoD():
         lim = self.border + dim * scale
         self.fig = plt.figure()
         self.ax = plt.axes(xlim=(-lim, lim), ylim=(-lim, lim))
-        self.points = self.ax.scatter([], [], cmap="jet")
+        self.points = self.ax.scatter([], [], cmap="jet", s=1)
 
         self.arrB = np.empty([len(self.system), np.shape(np.array(self.system[1].pos))[0],
                               np.shape(np.array(self.system[1].pos))[1]])
@@ -38,4 +38,6 @@ class twoD():
     def run(self, name):
         self.anim = animation.FuncAnimation(self.fig, self.animate, init_func=self.init,
                                             frames=int(self.frames))
-        self.anim.save(name, fps=30, writer='ffmpeg')
+        plt.xlabel("x/Tm")
+        plt.ylabel("y/Tm")
+        self.anim.save(name, fps=30, writer='ffmpeg', dpi=300)
