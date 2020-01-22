@@ -5,13 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/poisson.dir/poisson.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/poisson.dir/poisson.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/pyInterface.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/pyInterface.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/vecMaths.dir/vecMaths.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/vecMaths.dir/vecMaths.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sun_Earth_Jupiter.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Sun_Earth_Jupiter.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/anim.py" beforeDir="false" afterPath="$PROJECT_DIR$/anim.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libpoisson.a" beforeDir="false" afterPath="$PROJECT_DIR$/libpoisson.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libvecMaths.a" beforeDir="false" afterPath="$PROJECT_DIR$/libvecMaths.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/test.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/test2.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treecode.cpython-36m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/treecode.cpython-36m-x86_64-linux-gnu.so" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="settings.editor.selected.configurable" value="configurable.group.project" />
   </component>
   <component name="RunManager" selected="Python.plotSpeed">
@@ -134,7 +132,10 @@
       <workItem from="1578824941349" duration="11394000" />
       <workItem from="1578856594971" duration="7154000" />
       <workItem from="1579210287778" duration="14178000" />
-      <workItem from="1579453007702" duration="3011000" />
+      <workItem from="1579453007702" duration="5927000" />
+      <workItem from="1579547081979" duration="2117000" />
+      <workItem from="1579608667811" duration="1333000" />
+      <workItem from="1579703077337" duration="135000" />
     </task>
     <servers />
   </component>
@@ -159,10 +160,11 @@
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="141" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.736@0.0.1366.736" timestamp="1576929670868" />
-    <state x="353" y="173" width="649" height="388" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577884301298">
-      <screen x="0" y="0" width="1366" height="736" />
+    <state x="496" y="246" width="649" height="388" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579703194915">
+      <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="353" y="173" width="649" height="388" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.736@0.0.1366.736" timestamp="1577884301298" />
+    <state x="496" y="246" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1048@0.0.1920.1048" timestamp="1579703194915" />
     <state x="137" y="124" width="1081" height="486" key="#xdebugger.XInspectDialog" timestamp="1576960327895">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
@@ -224,11 +226,11 @@
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state width="683" height="368" key="XDebugger.FullValuePopup/0.0.1366.736@0.0.1366.736" timestamp="1577971324145" />
-    <state x="476" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1579453007648">
+    <state x="476" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1579703077781">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="339" y="195" key="com.intellij.ide.util.TipDialog/0.0.1366.736@0.0.1366.736" timestamp="1578055709162" />
-    <state x="476" y="278" key="com.intellij.ide.util.TipDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1579453007648" />
+    <state x="476" y="278" key="com.intellij.ide.util.TipDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1579703077781" />
     <state x="623" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1579210875678">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>

@@ -17,7 +17,7 @@ class twoD():
         lim = self.border + dim * scale
         self.fig = plt.figure()
         self.ax = plt.axes(xlim=(-lim, lim), ylim=(-lim, lim))
-        self.points = self.ax.scatter([], [], cmap="jet", s=1)
+        self.points = self.ax.scatter([], [], cmap="jet", s=10)
 
         self.arrB = np.empty([len(self.system), np.shape(np.array(self.system[1].pos))[0],
                               np.shape(np.array(self.system[1].pos))[1]])
