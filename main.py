@@ -102,14 +102,14 @@ def periodic(loc, mass, dim):
 
 
 if __name__ == "__main__":
-    dt = 1e-5 #1e-11
-    n_iter = 10000
+    dt = 5e-5 #1e2
+    n_iter = 2000
 
     m_1 = 1e20
     m_2 = 1e20
     r_1_2 = 14.6e9
     dim = 1e11
-    N = 2500
+    N = 1000
 
     arr_bodies = two_body_init(m_1, m_2, r_1_2)
     arr_bodies = lfEngine.half_step(arr_bodies, dt)
@@ -124,9 +124,9 @@ if __name__ == "__main__":
     dmMass = dmDen*vol
     dmPointMass = dmMass/N
     # dm, loc, mass = dm_array(dmPointMass, dmPointMass, N, dim)
-    # dm, loc, mass = dm_array_cube(dmPointMass, dmPointMass, N, dim)
+    dm, loc, mass = dm_array_cube(dmPointMass, dmPointMass, N, dim*0.8)
     # _arr_bodies = np.append(_arr_bodies, dm)
-    # _arr_bodies = dm
+    _arr_bodies = dm
     # perimitor = periodic(loc, mass, dim)
     particle1 = tree.body(m_1, [7e9, 0, 0], [0, 0, 0], [0] * 3)
     particle2 = tree.body(m_2, [-7e9, 0, 0], [-0, 0, 0], [0] * 3)
@@ -138,8 +138,8 @@ if __name__ == "__main__":
     arrCent = np.array([0, 0, 0])
     uniDim = np.array([1e15] * 3)
     # b = tree.basicRun(_arr_bodies, arrCent, uniDim, int(n_iter), dt)
-    spacing = 0.25e11 / 60
-    b = tree.particleMesh(_arr_bodies, spacing, 0.25e11, n_iter, dt)
+    spacing = dim / 20
+    b = tree.particleMesh(_arr_bodies, spacing, dim, n_iter, dt)
 
     colours = np.array([0, 0.25])
     # colours = np.array([0.5, 0.5])

@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import treecode as tree
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.cm as cm
 import pickle as pkl
 import lfEngine
 import numba
@@ -101,6 +103,47 @@ def periodic(loc, mass, dim):
     return arrBods
 
 
+def density(x, y, z, array):
+    array = np.log(array, out=np.zeros_like(array), where=(array != 0))
+    ma = np.max(array)
+    mi = np.min(array)
+    diff = ma-mi
+    scale = 1/diff
+    a = array[x, y, z]
+    den = scale*(a-[mi]*len(a))
+    out = cm.Reds(den)
+    out[:, 3] = out[:, 3]*(den)
+    return out
+
+def qColour(x, y, z, size):
+    norm = np.empty(size**3)
+    for i in range(0, size):
+        for j in range(0, size):
+            for k in range(0, size):
+                norm[i*size**2 + j*size + k] = np.sqrt(x[i, j, k]**2 + y[i, j, k]**2 + z[i, j, k]**2)
+
+    i = 0
+    while i < len(norm):
+        if norm[i] < 2e-9:
+            norm[i] = 0
+        i += 1
+    array = np.log(norm, out=np.zeros_like(norm), where=(norm != 0))
+    # array = norm
+    ma = np.max(array)
+    mi = np.min(array)
+    diff = ma-mi
+    scale = 1/diff
+    den = scale*(array-[mi]*len(array))
+    out = cm.Reds(den)
+    out[:, 3] = out[:, 3]*(den)
+
+    i = 0
+    while i < len(out):
+        if norm[i] == 0:
+            out[i, 3] = 0
+        i += 1
+    return out
+
 if __name__ == "__main__":
     dt = 1e-5 #1e-11
     n_iter = 10000
@@ -109,27 +152,32 @@ if __name__ == "__main__":
     m_2 = 1e20
     r_1_2 = 14.6e9
     dim = 1e11
-    N = 2500
+    N = 30
 
     arr_bodies = two_body_init(m_1, m_2, r_1_2)
     arr_bodies = lfEngine.half_step(arr_bodies, dt)
 
+    """ Generating bodies """
     _arr_bodies = np.array([])
     for body in arr_bodies:
         # print(body.r)
         _arr_bodies = np.append(_arr_bodies, tree.body(np.real(body.m), np.real(body.r), np.real(body.v), [0] * 3))
+    # _arr_bodies = np.append(_arr_bodies, tree.body(np.real(m_1), np.real([0, 0, 0]), np.real([0, 0, 0]), [0] * 3))
+    # for body in arr_bodies:
+    #     _arr_bodies = np.append(_arr_bodies, tree.body(np.real(body.m), np.real(body.r), np.real(body.v), [0] * 3))
 
     dmDen = 4
     vol = 4/3*np.pi*(dim/2)**3
     dmMass = dmDen*vol
     dmPointMass = dmMass/N
+
     # dm, loc, mass = dm_array(dmPointMass, dmPointMass, N, dim)
-    # dm, loc, mass = dm_array_cube(dmPointMass, dmPointMass, N, dim)
+    dm, loc, mass = dm_array_cube(dmPointMass, dmPointMass, N, dim)
     # _arr_bodies = np.append(_arr_bodies, dm)
     # _arr_bodies = dm
     # perimitor = periodic(loc, mass, dim)
-    particle1 = tree.body(m_1, [7e9, 0, 0], [0, 0, 0], [0] * 3)
-    particle2 = tree.body(m_2, [-7e9, 0, 0], [-0, 0, 0], [0] * 3)
+    # particle1 = tree.body(m_1, [7e9, 0, 0], [0, 0, 0], [0] * 3)
+    # particle2 = tree.body(m_2, [-7e9, 0, 0], [-0, 0, 0], [0] * 3)
     # _arr_bodies = np.array([])
     # _arr_bodies = np.append(particle1, _arr_bodies)
     # _arr_bodies = np.append(particle2, _arr_bodies)
@@ -138,40 +186,43 @@ if __name__ == "__main__":
     arrCent = np.array([0, 0, 0])
     uniDim = np.array([1e15] * 3)
     # b = tree.basicRun(_arr_bodies, arrCent, uniDim, int(n_iter), dt)
-    spacing = 0.25e11 / 60
-    b = tree.particleMesh(_arr_bodies, spacing, 0.25e11, n_iter, dt)
+    numPts = 10
+    spacing = dim / numPts
+    b = tree.PMTest(_arr_bodies, spacing, dim, dt)
+    b1 = np.array(tree.PMTest1(_arr_bodies, spacing, dim, dt))
+    acc = np.empty([len(b1), 3])
+    for i in range(len(b1)):
+        s = np.array(b1[i].acc)[-1]
+        acc[i, :] = np.array(b1[i].acc)[-1]
 
-    colours = np.array([0, 0.25])
-    # colours = np.array([0.5, 0.5])
-    colours = np.append(colours, np.array([0.5] * (len(_arr_bodies)-2)))
+    """ Cast to numpy array """
+    # array = np.array(b, copy=False)
+    Fx = np.array(b.getF(0))
+    Fy = np.array(b.getF(1))
+    Fz = np.array(b.getF(2))
 
-    forces = np.empty([len(b), len(b[0].acc), 3])
+    # xx, yy, zz = np.meshgrid(xs, ys, zs, sparse=True)
 
-    # for i in range(len(b)):
-    #     acc = np.array(b[i].acc)
-    #     mass = b[i].mass[0]
-    #     forces[i] = acc * mass
-    mation = anim.twoD(b, colours, dim, 1e-12, 10)
-    # mation.animate(10)
-    mation.run("test2.mp4")
+    xx, yy, zz = np.mgrid[-dim/2:dim/2:spacing, -dim/2:dim/2:spacing, -dim/2:dim/2:spacing]
+    ix, iy, iz = np.mgrid[0:numPts:1, 0:numPts:1, 0:numPts:1]
+
+    fig = plt.figure()
+    ax = fig.gca(projection='3d')
+    theta = np.linspace(-4 * np.pi, 4 * np.pi, 100)
+    # ax.scatter(xx, yy, zz, color=density(ix.flatten(), iy.flatten(), iz.flatten(), array))
+
+    colours = qColour(Fx, Fy, Fz, numPts)
+    c1 = np.repeat(colours, 2, axis=0)
+    colours = np.concatenate((colours, c1))
+
+    q = ax.quiver(xx, yy, zz, Fx, Fy, Fz, color=colours, length=5e9, normalize=True)
+
+    bods = np.empty([len(_arr_bodies), 3])
+    for i in range(len(_arr_bodies)):
+        bods[i] = np.array(_arr_bodies[i].pos[0])
+    ax.scatter(bods[:, 0], bods[:, 1], bods[:, 2], color=[0, 0, 0, 1])
+    interp = ax.quiver(bods[:, 0], bods[:, 1], bods[:, 2], acc[:, 0], acc[:, 1], acc[:, 2], length=5e9, normalize=True)
+
+
     plt.show()
 
-    # plt.plot(forces[1, :, 0])
-    # plt.show()
-
-
-    # labels = ["1", "2", "DM"]
-    # colour = ["orange", "purple", "grey"]
-    # for i in range(2):
-    #     # plt.plot(result["rs"][i, :, 1]/1e12, result["rs"][i, :, 0]/1e12, label=labels[i], color=colour[i])
-    #     plt.plot(np.array(b[i].pos)[:, 0] / 1e12, np.array(b[i].pos)[:, 1] / 1e12, label=labels[i], color=colour[i])
-    #     plt.scatter(np.array(b[i].pos)[-1, 0] / 1e12, np.array(b[i].pos)[-1, 1] / 1e12, color=colour[i])
-    # for i in range(2, len(_arr_bodies)):
-    #     plt.plot(np.array(b[i].pos)[:, 0] / 1e12, np.array(b[i].pos)[:, 1] / 1e12, label=labels[2], color=colour[2])
-    #     plt.scatter(np.array(b[i].pos)[-1, 0] / 1e12, np.array(b[i].pos)[-1, 1] / 1e12, color=colour[2])
-    # # plt.savefig("bin.png")
-    # plt.axvline(x=1e-12*dim/2)
-    # plt.axvline(x=-1e-12*dim/2)
-    # plt.axhline(y=1e-12*dim/2)
-    # plt.axhline(y=-1e-12*dim/2)
-    # plt.show()
