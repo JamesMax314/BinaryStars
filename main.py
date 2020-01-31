@@ -102,8 +102,8 @@ def periodic(loc, mass, dim):
 
 
 if __name__ == "__main__":
-    dt = 5e-5 #1e2
-    n_iter = 2000
+    dt = 1e8#1e2 #1e2
+    n_iter = 1000
 
     m_1 = 1e20
     m_2 = 1e20
@@ -124,9 +124,9 @@ if __name__ == "__main__":
     dmMass = dmDen*vol
     dmPointMass = dmMass/N
     # dm, loc, mass = dm_array(dmPointMass, dmPointMass, N, dim)
-    dm, loc, mass = dm_array_cube(dmPointMass, dmPointMass, N, dim*0.8)
+    dm, loc, mass = dm_array_cube(dmPointMass, dmPointMass, N, dim)
     # _arr_bodies = np.append(_arr_bodies, dm)
-    _arr_bodies = dm
+    # _arr_bodies = dm
     # perimitor = periodic(loc, mass, dim)
     particle1 = tree.body(m_1, [7e9, 0, 0], [0, 0, 0], [0] * 3)
     particle2 = tree.body(m_2, [-7e9, 0, 0], [-0, 0, 0], [0] * 3)
