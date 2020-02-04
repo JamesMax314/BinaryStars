@@ -3,12 +3,34 @@
   <component name="ChangeListManager">
     <list default="true" id="85b2037a-2ec7-42ad-be08-86c5bb37f617" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/leapfrog.dir/leapfrog.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/leapfrog.dir/leapfrog.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/poisson.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/poisson.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/poisson.dir/poisson.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/poisson.dir/poisson.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treeShow.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treeShow.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/pyInterface.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/pyInterface.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anim.py" beforeDir="false" afterPath="$PROJECT_DIR$/anim.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/trees.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/trees.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/trees.dir/trees.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/trees.dir/trees.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/vecMaths.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/vecMaths.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gridTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/gridTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libleapfrog.a" beforeDir="false" afterPath="$PROJECT_DIR$/libleapfrog.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libpoisson.a" beforeDir="false" afterPath="$PROJECT_DIR$/libpoisson.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libtrees.a" beforeDir="false" afterPath="$PROJECT_DIR$/libtrees.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test2.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/test2.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treecode.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/treecode.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treecode.cpython-36m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/treecode.cpython-36m-x86_64-linux-gnu.so" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -210,6 +232,11 @@
       <workItem from="1580205945284" duration="8915000" />
       <workItem from="1580321451098" duration="599000" />
       <workItem from="1580390470951" duration="9758000" />
+      <workItem from="1580459349361" duration="5592000" />
+      <workItem from="1580560290128" duration="3617000" />
+      <workItem from="1580641627414" duration="631000" />
+      <workItem from="1580743439263" duration="628000" />
+      <workItem from="1580807108144" duration="1228000" />
     </task>
     <servers />
   </component>
@@ -302,11 +329,11 @@
     </state>
     <state width="683" height="368" key="XDebugger.FullValuePopup/0.0.1366.736@0.0.1366.736" timestamp="1577971324145" />
     <state width="960" height="524" key="XDebugger.FullValuePopup/0.0.1920.1048@0.0.1920.1048" timestamp="1579953893505" />
-    <state x="476" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1580390472503">
+    <state x="476" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1580807119763">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="339" y="195" key="com.intellij.ide.util.TipDialog/0.0.1366.736@0.0.1366.736" timestamp="1578055709162" />
-    <state x="476" y="278" key="com.intellij.ide.util.TipDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1580390472503" />
+    <state x="476" y="278" key="com.intellij.ide.util.TipDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1580807119763" />
     <state x="495" y="263" width="920" height="520" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1579706100568">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>

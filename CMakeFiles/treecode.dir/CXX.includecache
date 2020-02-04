@@ -163,6 +163,8 @@ bodies.h
 -
 fftw3.h
 -
+cmath
+-
 bodies.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.h
 
@@ -187,10 +189,24 @@ treeShow.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/treeShow.h
 poisson.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.h
+tpm.h
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/tpm.h
 
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/pyInterface.h
 trees.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/trees.h
+
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/tpm.h
+fftw3.h
+-
+cmath
+-
+map
+-
+bodies.h
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.h
+poisson.h
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.h
 
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/treeShow.h
 trees.h

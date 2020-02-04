@@ -124,6 +124,19 @@ treecode/fast:
 .PHONY : treecode/fast
 
 #=============================================================================
+# Target rules for targets named tpm
+
+# Build rule for target.
+tpm: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tpm
+.PHONY : tpm
+
+# fast build rule for target.
+tpm/fast:
+	$(MAKE) -f CMakeFiles/tpm.dir/build.make CMakeFiles/tpm.dir/build
+.PHONY : tpm/fast
+
+#=============================================================================
 # Target rules for targets named bodies
 
 # Build rule for target.
@@ -309,6 +322,33 @@ pyInterface.cpp.s:
 	$(MAKE) -f CMakeFiles/treecode.dir/build.make CMakeFiles/treecode.dir/pyInterface.cpp.s
 .PHONY : pyInterface.cpp.s
 
+tpm.o: tpm.cpp.o
+
+.PHONY : tpm.o
+
+# target to build an object file
+tpm.cpp.o:
+	$(MAKE) -f CMakeFiles/tpm.dir/build.make CMakeFiles/tpm.dir/tpm.cpp.o
+.PHONY : tpm.cpp.o
+
+tpm.i: tpm.cpp.i
+
+.PHONY : tpm.i
+
+# target to preprocess a source file
+tpm.cpp.i:
+	$(MAKE) -f CMakeFiles/tpm.dir/build.make CMakeFiles/tpm.dir/tpm.cpp.i
+.PHONY : tpm.cpp.i
+
+tpm.s: tpm.cpp.s
+
+.PHONY : tpm.s
+
+# target to generate assembly for a file
+tpm.cpp.s:
+	$(MAKE) -f CMakeFiles/tpm.dir/build.make CMakeFiles/tpm.dir/tpm.cpp.s
+.PHONY : tpm.cpp.s
+
 treeShow.o: treeShow.cpp.o
 
 .PHONY : treeShow.o
@@ -398,6 +438,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... treecode"
+	@echo "... tpm"
 	@echo "... bodies"
 	@echo "... vecMaths"
 	@echo "... edit_cache"
@@ -417,6 +458,9 @@ help:
 	@echo "... pyInterface.o"
 	@echo "... pyInterface.i"
 	@echo "... pyInterface.s"
+	@echo "... tpm.o"
+	@echo "... tpm.i"
+	@echo "... tpm.s"
 	@echo "... treeShow.o"
 	@echo "... treeShow.i"
 	@echo "... treeShow.s"

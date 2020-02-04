@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtpm.a  CMakeFiles/tpm.dir/tpm.cpp.o
+/usr/bin/ranlib libtpm.a

@@ -19,6 +19,7 @@ CMakeFiles/treecode.dir/pyInterface.cpp.o: /home/james/Documents/University/Comp
 CMakeFiles/treecode.dir/pyInterface.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.h
 CMakeFiles/treecode.dir/pyInterface.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/pyInterface.cpp
 CMakeFiles/treecode.dir/pyInterface.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/pyInterface.h
+CMakeFiles/treecode.dir/pyInterface.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/tpm.h
 CMakeFiles/treecode.dir/pyInterface.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/treeShow.h
 CMakeFiles/treecode.dir/pyInterface.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/trees.h
 CMakeFiles/treecode.dir/pyInterface.cpp.o: /usr/include/python3.6m/Python.h

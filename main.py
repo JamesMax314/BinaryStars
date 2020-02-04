@@ -102,7 +102,7 @@ def periodic(loc, mass, dim):
 
 
 if __name__ == "__main__":
-    dt = 1e8#1e2 #1e2
+    dt = 1e8  # 1e8 #1e2 #1e2
     n_iter = 1000
 
     m_1 = 1e20
@@ -138,7 +138,7 @@ if __name__ == "__main__":
     arrCent = np.array([0, 0, 0])
     uniDim = np.array([1e15] * 3)
     # b = tree.basicRun(_arr_bodies, arrCent, uniDim, int(n_iter), dt)
-    spacing = dim / 20
+    spacing = dim / 30
     b = tree.particleMesh(_arr_bodies, spacing, dim, n_iter, dt)
 
     colours = np.array([0, 0.25])

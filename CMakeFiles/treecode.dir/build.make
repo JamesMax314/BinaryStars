@@ -85,6 +85,7 @@ treecode.cpython-36m-x86_64-linux-gnu.so: libleapfrog.a
 treecode.cpython-36m-x86_64-linux-gnu.so: libbodies.a
 treecode.cpython-36m-x86_64-linux-gnu.so: libtreeShow.a
 treecode.cpython-36m-x86_64-linux-gnu.so: libpoisson.a
+treecode.cpython-36m-x86_64-linux-gnu.so: libtpm.a
 treecode.cpython-36m-x86_64-linux-gnu.so: /usr/lib/gcc/x86_64-linux-gnu/7/libgomp.so
 treecode.cpython-36m-x86_64-linux-gnu.so: /usr/lib/x86_64-linux-gnu/libpthread.so
 treecode.cpython-36m-x86_64-linux-gnu.so: CMakeFiles/treecode.dir/link.txt

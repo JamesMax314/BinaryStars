@@ -150,7 +150,7 @@ if __name__ == "__main__":
 
     m_1 = 1e20
     m_2 = 1e20
-    r_1_2 = 14.6e9
+    r_1_2 = 30e9
     dim = 1e11
     N = 30
 
@@ -176,10 +176,10 @@ if __name__ == "__main__":
     # _arr_bodies = np.append(_arr_bodies, dm)
     # _arr_bodies = dm
     # perimitor = periodic(loc, mass, dim)
-    # particle1 = tree.body(m_1, [7e9, 0, 0], [0, 0, 0], [0] * 3)
+    particle1 = tree.body(m_1, [0, 0, 0], [0, 0, 0], [0] * 3)
     # particle2 = tree.body(m_2, [-7e9, 0, 0], [-0, 0, 0], [0] * 3)
-    # _arr_bodies = np.array([])
-    # _arr_bodies = np.append(particle1, _arr_bodies)
+    _arr_bodies = np.array([])
+    _arr_bodies = np.append(particle1, _arr_bodies)
     # _arr_bodies = np.append(particle2, _arr_bodies)
     # _arr_bodies = np.append(_arr_bodies, dm)
 

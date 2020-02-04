@@ -81,6 +81,56 @@
 					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="tpm">
+				<Option output="/home/james/Documents/University/ComputingProject/Python/libtpm.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/james/Documents/University/ComputingProject/Python"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src"/>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/./Include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 tpm"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tpm/fast">
+				<Option output="/home/james/Documents/University/ComputingProject/Python/libtpm.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/james/Documents/University/ComputingProject/Python"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src"/>
+					<Add directory="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/./Include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 tpm/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/james/Documents/University/ComputingProject/Python/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="bodies">
 				<Option output="/home/james/Documents/University/ComputingProject/Python/libbodies.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/james/Documents/University/ComputingProject/Python"/>
@@ -415,6 +465,12 @@
 		</Unit>
 		<Unit filename="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/pyInterface.h">
 			<Option target="treecode"/>
+		</Unit>
+		<Unit filename="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/tpm.cpp">
+			<Option target="tpm"/>
+		</Unit>
+		<Unit filename="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/tpm.h">
+			<Option target="tpm"/>
 		</Unit>
 		<Unit filename="/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/treeShow.cpp">
 			<Option target="treeShow"/>

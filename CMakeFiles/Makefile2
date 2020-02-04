@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/james/Documents/University/ComputingProject/Python
 
 # The main recursive "all" target.
 all: CMakeFiles/treecode.dir/all
+all: CMakeFiles/tpm.dir/all
 all: CMakeFiles/bodies.dir/all
 all: CMakeFiles/vecMaths.dir/all
 all: CMakeFiles/poisson.dir/all
@@ -66,6 +67,7 @@ all: Include/pybind11/all
 
 # The main recursive "clean" target.
 clean: CMakeFiles/treecode.dir/clean
+clean: CMakeFiles/tpm.dir/clean
 clean: CMakeFiles/bodies.dir/clean
 clean: CMakeFiles/vecMaths.dir/clean
 clean: CMakeFiles/poisson.dir/clean
@@ -85,20 +87,21 @@ preinstall: Include/pybind11/preinstall
 # Target rules for target CMakeFiles/treecode.dir
 
 # All Build rule for target.
-CMakeFiles/treecode.dir/all: CMakeFiles/bodies.dir/all
-CMakeFiles/treecode.dir/all: CMakeFiles/treeShow.dir/all
-CMakeFiles/treecode.dir/all: CMakeFiles/vecMaths.dir/all
-CMakeFiles/treecode.dir/all: CMakeFiles/poisson.dir/all
 CMakeFiles/treecode.dir/all: CMakeFiles/leapfrog.dir/all
 CMakeFiles/treecode.dir/all: CMakeFiles/trees.dir/all
+CMakeFiles/treecode.dir/all: CMakeFiles/treeShow.dir/all
+CMakeFiles/treecode.dir/all: CMakeFiles/tpm.dir/all
+CMakeFiles/treecode.dir/all: CMakeFiles/bodies.dir/all
+CMakeFiles/treecode.dir/all: CMakeFiles/vecMaths.dir/all
+CMakeFiles/treecode.dir/all: CMakeFiles/poisson.dir/all
 	$(MAKE) -f CMakeFiles/treecode.dir/build.make CMakeFiles/treecode.dir/depend
 	$(MAKE) -f CMakeFiles/treecode.dir/build.make CMakeFiles/treecode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=9,10 "Built target treecode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=11,12 "Built target treecode"
 .PHONY : CMakeFiles/treecode.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/treecode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/james/Documents/University/ComputingProject/Python/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james/Documents/University/ComputingProject/Python/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/treecode.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/james/Documents/University/ComputingProject/Python/CMakeFiles 0
 .PHONY : CMakeFiles/treecode.dir/rule
@@ -112,6 +115,33 @@ treecode: CMakeFiles/treecode.dir/rule
 CMakeFiles/treecode.dir/clean:
 	$(MAKE) -f CMakeFiles/treecode.dir/build.make CMakeFiles/treecode.dir/clean
 .PHONY : CMakeFiles/treecode.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/tpm.dir
+
+# All Build rule for target.
+CMakeFiles/tpm.dir/all:
+	$(MAKE) -f CMakeFiles/tpm.dir/build.make CMakeFiles/tpm.dir/depend
+	$(MAKE) -f CMakeFiles/tpm.dir/build.make CMakeFiles/tpm.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=7,8 "Built target tpm"
+.PHONY : CMakeFiles/tpm.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/tpm.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james/Documents/University/ComputingProject/Python/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/tpm.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/james/Documents/University/ComputingProject/Python/CMakeFiles 0
+.PHONY : CMakeFiles/tpm.dir/rule
+
+# Convenience name for target.
+tpm: CMakeFiles/tpm.dir/rule
+
+.PHONY : tpm
+
+# clean rule for target.
+CMakeFiles/tpm.dir/clean:
+	$(MAKE) -f CMakeFiles/tpm.dir/build.make CMakeFiles/tpm.dir/clean
+.PHONY : CMakeFiles/tpm.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/bodies.dir
@@ -147,7 +177,7 @@ CMakeFiles/bodies.dir/clean:
 CMakeFiles/vecMaths.dir/all:
 	$(MAKE) -f CMakeFiles/vecMaths.dir/build.make CMakeFiles/vecMaths.dir/depend
 	$(MAKE) -f CMakeFiles/vecMaths.dir/build.make CMakeFiles/vecMaths.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=13,14 "Built target vecMaths"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=15,16 "Built target vecMaths"
 .PHONY : CMakeFiles/vecMaths.dir/all
 
 # Build rule for subdir invocation for target.
@@ -228,7 +258,7 @@ CMakeFiles/leapfrog.dir/clean:
 CMakeFiles/trees.dir/all:
 	$(MAKE) -f CMakeFiles/trees.dir/build.make CMakeFiles/trees.dir/depend
 	$(MAKE) -f CMakeFiles/trees.dir/build.make CMakeFiles/trees.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=11,12 "Built target trees"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=13,14 "Built target trees"
 .PHONY : CMakeFiles/trees.dir/all
 
 # Build rule for subdir invocation for target.
@@ -255,7 +285,7 @@ CMakeFiles/trees.dir/clean:
 CMakeFiles/treeShow.dir/all:
 	$(MAKE) -f CMakeFiles/treeShow.dir/build.make CMakeFiles/treeShow.dir/depend
 	$(MAKE) -f CMakeFiles/treeShow.dir/build.make CMakeFiles/treeShow.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=7,8 "Built target treeShow"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/james/Documents/University/ComputingProject/Python/CMakeFiles --progress-num=9,10 "Built target treeShow"
 .PHONY : CMakeFiles/treeShow.dir/all
 
 # Build rule for subdir invocation for target.
