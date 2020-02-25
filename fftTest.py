@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import treecode as tree
 from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.cm as cm
 import pickle as pkl
 import lfEngine
+import numba
 import numba
 import anim
 import time
@@ -102,81 +102,57 @@ def periodic(loc, mass, dim):
 
     return arrBods
 
-
-def density(x, y, z, array):
-    array = np.log(array, out=np.zeros_like(array), where=(array != 0))
-    ma = np.max(array)
-    mi = np.min(array)
-    diff = ma-mi
-    scale = 1/diff
-    a = array[x, y, z]
-    den = scale*(a-[mi]*len(a))
-    out = cm.Reds(den)
-    out[:, 3] = out[:, 3]*(den)
-    return out
-
-def qColour(x, y, z, size):
-    norm = np.empty(size**3)
-    for i in range(0, size):
-        for j in range(0, size):
-            for k in range(0, size):
-                norm[i*size**2 + j*size + k] = np.sqrt(x[i, j, k]**2 + y[i, j, k]**2 + z[i, j, k]**2)
-
-    i = 0
-    while i < len(norm):
-        if norm[i] < 2e-19:
-            norm[i] = 0
-        i += 1
-    array = np.log(norm, out=np.zeros_like(norm), where=(norm != 0))
-    # array = norm
-    ma = np.max(array)
-    mi = np.min(array)
-    diff = ma-mi
-    scale = 1/diff
-    den = scale*(array-[mi]*len(array))
-    out = cm.plasma(den*4)
-    out[:, 3] = out[:, 3]*(den)*5
-
-    i = 0
-    while i < len(out):
-        if norm[i] == 0:
-            out[i, 3] = 0
-        i += 1
-    return out
+@numba.jit(nopython=True)
+def diff(Frho):
+    scale = np.empty_like(Frho)
+    numPts = Frho.shape
+    diff = np.empty(((numPts[0], numPts[1], numPts[2], 3)), dtype=np.complex64)
+    for axis in range(3):
+        for i in range(Frho.shape[0]):
+            for j in range(Frho.shape[0]):
+                for k in range(Frho.shape[0]):
+                    kx = i - Frho.shape[0]
+                    ky = i - Frho.shape[1]
+                    kz = i - Frho.shape[2]
+                    kVec = np.array([kx, ky, kz])
+                    scale[i, j, k] = 1j * spacing * kVec[axis] * 4 * np.pi * G / (
+                                pow(numPts[axis], 2) * numPts[0] * numPts[1] * numPts[2] *
+                                (kx * kx / pow(numPts[0], 2) +
+                                 ky * ky / pow(numPts[1], 2) +
+                                 kz * kz / pow(numPts[2], 2)))
+                    diff[:, :, :, axis] = scale * Frho
+    return diff
 
 if __name__ == "__main__":
-    dt = 1e-5 #1e-11
+    dt = 1e8  # 1e8 #1e2 #1e2
     n_iter = 10000
 
     m_1 = 1e20
     m_2 = 1e20
-    r_1_2 = 30e9
+    r_1_2 = 14.6e9
     dim = 1e11
-    N = 30
+    N = 1000
 
     arr_bodies = two_body_init(m_1, m_2, r_1_2)
     arr_bodies = lfEngine.half_step(arr_bodies, dt)
 
-    """ Generating bodies """
     _arr_bodies = np.array([])
+    offsets = [[-1e11, 0, 0], [0]*3, [1e11, 0, 0]]
     for body in arr_bodies:
         # print(body.r)
         _arr_bodies = np.append(_arr_bodies, tree.body(np.real(body.m), np.real(body.r), np.real(body.v), [0] * 3))
-    # _arr_bodies = np.append(_arr_bodies, tree.body(np.real(m_1), np.real([0, 0, 0]), np.real([0, 0, 0]), [0] * 3))
-    # for body in arr_bodies:
-    #     _arr_bodies = np.append(_arr_bodies, tree.body(np.real(body.m), np.real(body.r), np.real(body.v), [0] * 3))
+
 
     dmDen = 4
-    vol = 4/3*np.pi*(dim/2)**3
+    vol = dim**3
     dmMass = dmDen*vol
     dmPointMass = dmMass/N
-
     # dm, loc, mass = dm_array(dmPointMass, dmPointMass, N, dim)
     dm, loc, mass = dm_array_cube(dmPointMass, dmPointMass, N, dim)
     # _arr_bodies = np.append(_arr_bodies, dm)
     # _arr_bodies = dm
-    # perimitor = periodic(loc, mass, dim)
-    # particle1 = tree.body(m_1, [0, 0, 0], [0, 0, 0], [0] * 3)
+    # perimitor s= periodic(loc, mass, dim)
+    # particle1 = tree.body(m_1, [7e9, 0, 0], [0, 0, 0], [0] * 3)
     # particle2 = tree.body(m_2, [-7e9, 0, 0], [-0, 0, 0], [0] * 3)
     # _arr_bodies = np.array([])
     # _arr_bodies = np.append(particle1, _arr_bodies)
@@ -185,72 +161,58 @@ if __name__ == "__main__":
 
     arrCent = np.array([0, 0, 0])
     uniDim = np.array([1e15] * 3)
+    uniDim = np.array([3e15] * 3)
     # b = tree.basicRun(_arr_bodies, arrCent, uniDim, int(n_iter), dt)
-    numPts = 7
-    spacing = dim / numPts
-    arr_bodies1 = np.copy(_arr_bodies)
-    b1 = np.array(tree.PMTest1(_arr_bodies, spacing, dim, dt))
-    acc = np.empty([len(b1), 3])
-    for i in range(len(b1)):
-        s = np.array(b1[i].acc)[-1]
-        acc[i, :] = np.array(b1[i].acc)[-1]
+    spacing = dim / 20
+    # b = tree.particleMesh(_arr_bodies, spacing, dim, n_iter, dt)
+    pot = np.array(tree.PMTestPot(_arr_bodies, spacing, dim))
+    # indx = np.argmax(pot)
+    a = 0
 
-    """ Cast to numpy array """
-    # array = np.array(b, copy=False)
-    Fx = np.array(tree.PMTest(arr_bodies1, spacing, dim, 0))
-    Fy = np.array(tree.PMTest(arr_bodies1, spacing, dim, 1))
-    Fz = np.array(tree.PMTest(arr_bodies1, spacing, dim, 2))
-
-    # xx, yy, zz = np.meshgrid(xs, ys, zs, sparse=True)
-
-    xx, yy, zz = np.mgrid[-dim/2:dim/2:spacing, -dim/2:dim/2:spacing, -dim/2:dim/2:spacing]
-    ix, iy, iz = np.mgrid[0:numPts:1, 0:numPts:1, 0:numPts:1]
-    xx1, yy1, zz1 = np.mgrid[-dim*1e-9/2:dim*1e-9/2:spacing*1e-9, -dim*1e-9/2:dim*1e-9/2:spacing*1e-9, -dim*1e-9/2:dim*1e-9/2:spacing*1e-9]
-    # ix, iy, iz = np.mgrid[0:numPts:1, 0:numPts:1, 0:numPts:1]
-
-    fig = plt.figure()
-    ax = fig.gca(projection='3d')
-    theta = np.linspace(-4 * np.pi, 4 * np.pi, 100)
-    # ax.scatter(xx, yy, zz, color=density(ix.flatten(), iy.flatten(), iz.flatten(), array))
-
-    colours = qColour(Fx, Fy, Fz, numPts)
-    c1 = np.repeat(colours, 2, axis=0)
-    colours = np.concatenate((colours, c1))
-
-    q = ax.quiver(xx1, yy1, zz1, Fx, Fy, Fz, color=colours, length=5, normalize=True)
-
-    bods = np.empty([len(_arr_bodies), 3])
-    for i in range(len(_arr_bodies)):
-        bods[i] = np.array(_arr_bodies[i].pos[0])
-    ax.scatter(bods[:, 0]*1e-9, bods[:, 1]*1e-9, bods[:, 2]*1e-9, color=[0, 0, 0, 1])
-    interp = ax.quiver(bods[:, 0]*1e-9, bods[:, 1]*1e-9, bods[:, 2]*1e-9, acc[:, 0], acc[:, 1], acc[:, 2], color=[0, 0, 0, 1], length=5, normalize=True)
-
-    # make the panes transparent
-    ax.xaxis.set_pane_color((1.0, 1.0, 1.0, 0.0))
-    ax.yaxis.set_pane_color((1.0, 1.0, 1.0, 0.0))
-    ax.zaxis.set_pane_color((1.0, 1.0, 1.0, 0.0))
-    # make the grid lines transparent
-    ax.xaxis._axinfo["grid"]['color'] = (1, 1, 1, 0)
-    ax.yaxis._axinfo["grid"]['color'] = (1, 1, 1, 0)
-    ax.zaxis._axinfo["grid"]['color'] = (1, 1, 1, 0)
-    ax.w_xaxis.line.set_color("black")
-    ax.w_yaxis.line.set_color("black")
-    ax.w_zaxis.line.set_color("black")
-    ax.xaxis.label.set_color('black')
-    ax.yaxis.label.set_color('black')
-    ax.zaxis.label.set_color('black')
-    ax.tick_params(axis='x', colors='black')  # only affects
-    ax.tick_params(axis='y', colors='black')  # tick labels
-    ax.tick_params(axis='z', colors='black')
-    ax.xaxis._axinfo['tick']['color'] = 'k'
-    ax.yaxis._axinfo['tick']['color'] = 'k'
-    ax.zaxis._axinfo['tick']['color'] = 'k'
-
-    ax.set_xlabel('$x$ / $G$m')
-    ax.set_ylabel('$y$ / $G$m')
-    ax.set_zlabel('$z$ / $G$m')
-    # fig.subplots_adjust(left=-0.06)
-
+    im = np.average(pot, axis=2)
+    print(np.average(pot))
+    # plt.imshow(im)
     # plt.show()
-    # plt.style.use('default')
-    plt.savefig("../Diagrams/PM1.png", transparent=True, bbox_inches='tight', dpi=400)
+
+    Frho = np.fft.fftn(pot)
+    Frho = np.fft.fftshift(Frho) / (Frho.shape[0] * Frho.shape[1] * Frho.shape[2])
+    absRho = np.abs(Frho)
+    im = np.average(absRho, axis=2)
+    # plt.imshow(im)
+    # plt.show()
+
+    fx1 = np.array(tree.PMTestForce(_arr_bodies, spacing, dim, 1))
+    fx = np.array(tree.PMTestForce(_arr_bodies, spacing, dim, 0))
+    fy = np.array(tree.PMTestForce(_arr_bodies, spacing, dim, 1))
+    fz = np.array(tree.PMTestForce(_arr_bodies, spacing, dim, 2))
+    a = 0
+    a = (fx[8, 10, 10])
+    a += (fx[8, 10, 11])
+    a += (fx[8, 11, 10])
+    a += (fx[8, 10, 11])
+    a += (fx[9, 10, 10])
+    a += (fx[9, 10, 11])
+    a += (fx[9, 11, 10])
+    a += (fx[9, 10, 11])
+    print(a/8)
+
+
+    im = fx[:, :, 10]
+    plt.imshow(im)
+    plt.show()
+    # fig = plt.figure()
+    # ax = fig.add_subplot(111, projection='3d')
+    # xx, yy, zz = np.mgrid[-dim / 2:dim / 2:spacing, -dim / 2:dim / 2:spacing, -dim / 2:dim / 2:spacing]
+    # ax.scatter(xx, yy, zz, c=fx.flatten())
+    # plt.show()
+    # Diff
+    # dif = diff(Frho)
+    #
+    # force = np.fft.ifftn(dif[:, :, :, 0])
+    #
+    # absF = np.real(force)
+    # im = absF[:, :, int(force.shape[2]/2)] #np.sum(absF, axis=2)
+    # plt.imshow(im)
+    # plt.show()
+
+

@@ -6,6 +6,7 @@ import pickle as pkl
 import lfEngine
 import numba
 import anim
+import pickle
 import time
 
 G = 6.674e-11
@@ -100,88 +101,50 @@ def periodic(loc, mass, dim):
 
     return arrBods
 
+def save(bodies, file):
+    arrB = np.empty([len(bodies), np.shape(np.array(bodies[0].pos))[0],
+                     np.shape(np.array(bodies[0].pos))[1]])
+    for i in range(len(bodies)):
+        arrB[i, :, :] = np.array(bodies[i].pos)
+
+    outfile = open(file, 'wb')
+    pickle.dump(arrB, outfile)
+    outfile.close()
+
 
 if __name__ == "__main__":
-    dt = 4e15  # 1e8 #1e2 #1e2
-    n_iter = 1000
+    dt = 2e15 #2e15  # 1e8 #1e2 #1e2
+    n_iter = 4000
 
     m_1 = 1e20
     m_2 = 1e20
     r_1_2 = 14.6e9
     dim = 1e27
-    N = 1000
+    N = 20000
 
     arr_bodies = two_body_init(m_1, m_2, r_1_2)
     arr_bodies = lfEngine.half_step(arr_bodies, dt)
 
-    _arr_bodies = np.array([])
-    for body in arr_bodies:
-        # print(body.r)
-        _arr_bodies = np.append(_arr_bodies,
-                                tree.body(np.real(body.m), np.real(body.r), np.real(body.v), [0] * 3))
-    # offsets = [[-1e11, 0, 0], [0]*3, [1e11, 0, 0]]
-    # for i in range(3):
-    #     for body in arr_bodies:
-    #         # print(body.r)
-    #         _arr_bodies = np.append(_arr_bodies, tree.body(np.real(body.m), np.real(body.r + offsets[i]), np.real(body.v), [0] * 3))
-
-
-    dmDen = 4
+    dmDen = 0.268*0.85e-26
     vol = dim**3
     dmMass = dmDen*vol
     dmPointMass = dmMass/N
-    # dm, loc, mass = dm_array(dmPointMass, dmPointMass, N, dim)
     dm, loc, mass = dm_array_cube(dmPointMass, dmPointMass, N, dim)
-    # _arr_bodies = np.append(_arr_bodies, dm)
     _arr_bodies = dm
-    # perimitor = periodic(loc, mass, dim)
-    particle1 = tree.body(m_1, [0, 0, 0], [0, 0, 0], [0] * 3)
-    # particle2 = tree.body(m_2, [-7e9, 0, 0], [-0, 0, 0], [0] * 3)
-    # _arr_bodies = np.array([])
-    # _arr_bodies = np.append(particle1, _arr_bodies)
-    # _arr_bodies = np.append(particle2, _arr_bodies)
-    # _arr_bodies = np.append(_arr_bodies, dm)
 
-    arrCent = np.array([0, 0, 0])
-    uniDim = np.array([1e15] * 3)
-    uniDim = np.array([3e15] * 3)
     # b = tree.basicRun(_arr_bodies, arrCent, uniDim, int(n_iter), dt)
-    spacing = dim / 30
+    spacing = dim / 50
     # tree.PMTestForce(_arr_bodies, spacing, dim, 0)
-    b = tree.particleMesh(_arr_bodies, spacing, dim, n_iter, dt)
-    # b = tree.TreePareticleMesh(_arr_bodies, spacing, dim, dmDen*10, n_iter, dt)
-    print("done")
-    # colours = np.array([0, 0.25])
+    # b = tree.particleMesh(_arr_bodies, spacing, dim, n_iter, dt)
+    b = tree.TreePareticleMesh(_arr_bodies, spacing, dim, dmDen*100, n_iter, dt)
+
+
     colours = np.array([0.5, 0.5])
-    colours = np.append(colours, np.array([0.5] * (len(_arr_bodies)-2)))
+    colours = np.append(colours, np.array([0.5] * (len(_arr_bodies) - 2)))
 
-    # forces = np.empty([len(b), len(b[0].acc), 3])
-
-    # for i in range(len(b)):
-    #     acc = np.array(b[i].acc)
-    #     mass = b[i].mass[0]
-    #     forces[i] = acc * mass
     mation = anim.twoD(b, colours, dim, 1e-12, 10)
     mation.animate(9)
-    mation.run("test2.mp4")
+    mation.run("nTest.mp4")
     plt.show()
 
-    # plt.plot(forces[1, :, 0])
-    # plt.show()
-
-
-    # labels = ["1", "2", "DM"]
-    # colour = ["orange", "purple", "grey"]
-    # for i in range(2):
-    #     # plt.plot(result["rs"][i, :, 1]/1e12, result["rs"][i, :, 0]/1e12, label=labels[i], color=colour[i])
-    #     plt.plot(np.array(b[i].pos)[:, 0] / 1e12, np.array(b[i].pos)[:, 1] / 1e12, label=labels[i], color=colour[i])
-    #     plt.scatter(np.array(b[i].pos)[-1, 0] / 1e12, np.array(b[i].pos)[-1, 1] / 1e12, color=colour[i])
-    # for i in range(2, len(_arr_bodies)):
-    #     plt.plot(np.array(b[i].pos)[:, 0] / 1e12, np.array(b[i].pos)[:, 1] / 1e12, label=labels[2], color=colour[2])
-    #     plt.scatter(np.array(b[i].pos)[-1, 0] / 1e12, np.array(b[i].pos)[-1, 1] / 1e12, color=colour[2])
-    # # plt.savefig("bin.png")
-    # plt.axvline(x=1e-12*dim/2)
-    # plt.axvline(x=-1e-12*dim/2)
-    # plt.axhline(y=1e-12*dim/2)
-    # plt.axhline(y=-1e-12*dim/2)
-    # plt.show()
+    save(b, "nTest.pkl")

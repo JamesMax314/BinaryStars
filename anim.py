@@ -17,10 +17,10 @@ class twoD():
         lim = self.border + dim * scale
         self.fig = plt.figure()
         self.ax = plt.axes(xlim=(-lim, lim), ylim=(-lim, lim))
-        self.points = self.ax.scatter([], [], cmap="jet", s=2)
+        self.points = self.ax.scatter([], [], cmap="jet", s=1000*2/len(self.system))
 
-        self.arrB = np.empty([len(self.system), np.shape(np.array(self.system[1].pos))[0],
-                              np.shape(np.array(self.system[1].pos))[1]])
+        self.arrB = np.empty([len(self.system), np.shape(np.array(self.system[0].pos))[0],
+                              np.shape(np.array(self.system[0].pos))[1]])
         for i in range(len(self.system)):
             self.arrB[i, :, :] = np.array(self.system[i].pos) * scale
         self.frames = int(np.shape(self.arrB)[1] / sampling)

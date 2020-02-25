@@ -29,7 +29,11 @@ bodies.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/tpm.cpp
 map
 -
+omp.h
+-
 utility
+-
+iostream
 -
 poisson.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.h
