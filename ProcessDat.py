@@ -60,7 +60,7 @@ def den(bodies, mesh, dim, point):
 
 
 if __name__ == "__main__":
-    data = load("nTest.pkl")
+    data = load("nTest1.pkl")
     point = 2000
     mesh = toMesh(data, 25, 1e27, point)
     fft = np.fft.fftn(mesh)

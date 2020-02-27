@@ -35,6 +35,8 @@ utility
 -
 iostream
 -
+cmath
+-
 poisson.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.h
 vecMaths.h

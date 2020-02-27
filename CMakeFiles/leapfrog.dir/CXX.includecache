@@ -19,6 +19,8 @@ iostream
 -
 omp.h
 -
+cmath
+-
 bodies.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.h
 trees.h

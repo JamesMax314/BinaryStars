@@ -114,13 +114,13 @@ def save(bodies, file):
 
 if __name__ == "__main__":
     dt = 2e15 #2e15  # 1e8 #1e2 #1e2
-    n_iter = 4000
+    n_iter = 2000
 
     m_1 = 1e20
     m_2 = 1e20
     r_1_2 = 14.6e9
     dim = 1e27
-    N = 20000
+    N = 10000
 
     arr_bodies = two_body_init(m_1, m_2, r_1_2)
     arr_bodies = lfEngine.half_step(arr_bodies, dt)
@@ -131,12 +131,13 @@ if __name__ == "__main__":
     dmPointMass = dmMass/N
     dm, loc, mass = dm_array_cube(dmPointMass, dmPointMass, N, dim)
     _arr_bodies = dm
+    startTime = 1e9*365*24*3600
 
     # b = tree.basicRun(_arr_bodies, arrCent, uniDim, int(n_iter), dt)
     spacing = dim / 50
     # tree.PMTestForce(_arr_bodies, spacing, dim, 0)
     # b = tree.particleMesh(_arr_bodies, spacing, dim, n_iter, dt)
-    b = tree.TreePareticleMesh(_arr_bodies, spacing, dim, dmDen*100, n_iter, dt)
+    b = tree.TreePareticleMesh(_arr_bodies, spacing, dim, dmDen*100, n_iter, dt, startTime)
 
 
     colours = np.array([0.5, 0.5])
@@ -144,7 +145,7 @@ if __name__ == "__main__":
 
     mation = anim.twoD(b, colours, dim, 1e-12, 10)
     mation.animate(9)
-    mation.run("nTest.mp4")
+    mation.run("nTest1.mp4")
     plt.show()
 
-    save(b, "nTest.pkl")
+    save(b, "nTest1.pkl")
