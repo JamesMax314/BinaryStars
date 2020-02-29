@@ -11,17 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="85b2037a-2ec7-42ad-be08-86c5bb37f617" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/leapfrog.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/leapfrog.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/leapfrog.dir/leapfrog.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/leapfrog.dir/leapfrog.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/tpm.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/tpm.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/tpm.dir/tpm.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/tpm.dir/tpm.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/treecode.dir/pyInterface.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/treecode.dir/pyInterface.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataGen.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataGen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PSpec.py" beforeDir="false" afterPath="$PROJECT_DIR$/PSpec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProcessDat.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProcessDat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libleapfrog.a" beforeDir="false" afterPath="$PROJECT_DIR$/libleapfrog.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libtpm.a" beforeDir="false" afterPath="$PROJECT_DIR$/libtpm.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treecode.cpython-36m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/treecode.cpython-36m-x86_64-linux-gnu.so" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +39,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="settings.editor.selected.configurable" value="configurable.group.project" />
   </component>
-  <component name="RunManager" selected="Python.PSpec">
+  <component name="RunManager" selected="Python.DataGen_V1">
     <configuration name="DataGen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -64,6 +54,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataGen.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DataGen_V1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataGen_V1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -138,35 +150,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="gridTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gridTest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.DataGen_V1" />
         <item itemvalue="Python.PSpec" />
         <item itemvalue="Python.ProcessDat" />
         <item itemvalue="Python.finalSim" />
         <item itemvalue="Python.DataGen" />
-        <item itemvalue="Python.gridTest" />
       </list>
     </recent_temporary>
   </component>
@@ -245,7 +235,8 @@
       <workItem from="1582556732569" duration="7036000" />
       <workItem from="1582623512524" duration="984000" />
       <workItem from="1582742039701" duration="2583000" />
-      <workItem from="1582817413931" duration="6994000" />
+      <workItem from="1582817413931" duration="7746000" />
+      <workItem from="1582887350982" duration="7515000" />
     </task>
     <servers />
   </component>
@@ -279,70 +270,70 @@
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="137" y="124" width="1081" height="486" key="#xdebugger.XInspectDialog/0.0.1366.736@0.0.1366.736" timestamp="1576960327895" />
-    <state x="969" y="353" key="#xdebugger.evaluate" timestamp="1582837000422">
+    <state x="969" y="353" key="#xdebugger.evaluate" timestamp="1582917846596">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="441" y="71" key="#xdebugger.evaluate/0.0.1366.736@0.0.1366.736" timestamp="1576960316415" />
-    <state x="969" y="353" key="#xdebugger.evaluate/0.0.1920.1048@0.0.1920.1048" timestamp="1582837000422" />
+    <state x="969" y="353" key="#xdebugger.evaluate/0.0.1920.1048@0.0.1920.1048" timestamp="1582917846596" />
     <state x="141" y="142" width="1639" height="764" key="DiffContextDialog" timestamp="1581414816050">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="100" y="100" width="1166" height="536" key="DiffContextDialog/0.0.1366.736@0.0.1366.736" timestamp="1576930061868" />
     <state x="141" y="142" width="1639" height="764" key="DiffContextDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1581414816050" />
-    <state width="1874" height="254" key="GridCell.Tab.0.bottom" timestamp="1582839519303">
+    <state width="1874" height="163" key="GridCell.Tab.0.bottom" timestamp="1582931092948">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.0.bottom/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1874" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1582839519303" />
-    <state width="1874" height="254" key="GridCell.Tab.0.center" timestamp="1582839519302">
+    <state width="1874" height="163" key="GridCell.Tab.0.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1582931092948" />
+    <state width="1874" height="163" key="GridCell.Tab.0.center" timestamp="1582931092948">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.0.center/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1874" height="254" key="GridCell.Tab.0.center/0.0.1920.1048@0.0.1920.1048" timestamp="1582839519302" />
-    <state width="1874" height="254" key="GridCell.Tab.0.left" timestamp="1582839519302">
+    <state width="1874" height="163" key="GridCell.Tab.0.center/0.0.1920.1048@0.0.1920.1048" timestamp="1582931092948" />
+    <state width="1874" height="163" key="GridCell.Tab.0.left" timestamp="1582931092948">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.0.left/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1874" height="254" key="GridCell.Tab.0.left/0.0.1920.1048@0.0.1920.1048" timestamp="1582839519302" />
-    <state width="1874" height="254" key="GridCell.Tab.0.right" timestamp="1582839519303">
+    <state width="1874" height="163" key="GridCell.Tab.0.left/0.0.1920.1048@0.0.1920.1048" timestamp="1582931092948" />
+    <state width="1874" height="163" key="GridCell.Tab.0.right" timestamp="1582931092948">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.0.right/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1874" height="254" key="GridCell.Tab.0.right/0.0.1920.1048@0.0.1920.1048" timestamp="1582839519303" />
-    <state width="1874" height="254" key="GridCell.Tab.1.bottom" timestamp="1582839519303">
+    <state width="1874" height="163" key="GridCell.Tab.0.right/0.0.1920.1048@0.0.1920.1048" timestamp="1582931092948" />
+    <state width="1874" height="301" key="GridCell.Tab.1.bottom" timestamp="1582931092946">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.1.bottom/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1874" height="254" key="GridCell.Tab.1.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1582839519303" />
-    <state width="1874" height="254" key="GridCell.Tab.1.center" timestamp="1582839519303">
+    <state width="1874" height="301" key="GridCell.Tab.1.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1582931092946" />
+    <state width="1874" height="301" key="GridCell.Tab.1.center" timestamp="1582931092946">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.1.center/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1874" height="254" key="GridCell.Tab.1.center/0.0.1920.1048@0.0.1920.1048" timestamp="1582839519303" />
-    <state width="1874" height="254" key="GridCell.Tab.1.left" timestamp="1582839519303">
+    <state width="1874" height="301" key="GridCell.Tab.1.center/0.0.1920.1048@0.0.1920.1048" timestamp="1582931092946" />
+    <state width="1874" height="301" key="GridCell.Tab.1.left" timestamp="1582931092946">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.1.left/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1874" height="254" key="GridCell.Tab.1.left/0.0.1920.1048@0.0.1920.1048" timestamp="1582839519303" />
-    <state width="1874" height="254" key="GridCell.Tab.1.right" timestamp="1582839519303">
+    <state width="1874" height="301" key="GridCell.Tab.1.left/0.0.1920.1048@0.0.1920.1048" timestamp="1582931092946" />
+    <state width="1874" height="301" key="GridCell.Tab.1.right" timestamp="1582931092946">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="1320" height="173" key="GridCell.Tab.1.right/0.0.1366.736@0.0.1366.736" timestamp="1577977064910" />
-    <state width="1874" height="254" key="GridCell.Tab.1.right/0.0.1920.1048@0.0.1920.1048" timestamp="1582839519303" />
+    <state width="1874" height="301" key="GridCell.Tab.1.right/0.0.1920.1048@0.0.1920.1048" timestamp="1582931092946" />
     <state x="172" y="3" key="SettingsEditor" timestamp="1576929715410">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="172" y="3" key="SettingsEditor/0.0.1366.736@0.0.1366.736" timestamp="1576929715410" />
-    <state width="960" height="524" key="XDebugger.FullValuePopup" timestamp="1579953893505">
+    <state width="960" height="524" key="XDebugger.FullValuePopup" timestamp="1582890834212">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state width="683" height="368" key="XDebugger.FullValuePopup/0.0.1366.736@0.0.1366.736" timestamp="1577971324145" />
-    <state width="960" height="524" key="XDebugger.FullValuePopup/0.0.1920.1048@0.0.1920.1048" timestamp="1579953893505" />
-    <state x="476" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1582817414094">
+    <state width="960" height="524" key="XDebugger.FullValuePopup/0.0.1920.1048@0.0.1920.1048" timestamp="1582890834212" />
+    <state x="476" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1582887379384">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="339" y="195" key="com.intellij.ide.util.TipDialog/0.0.1366.736@0.0.1366.736" timestamp="1578055709162" />
-    <state x="476" y="278" key="com.intellij.ide.util.TipDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1582817414094" />
+    <state x="476" y="278" key="com.intellij.ide.util.TipDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1582887379384" />
     <state x="495" y="263" width="920" height="520" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1579706100568">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
@@ -370,6 +361,16 @@
           <line>63</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DataGen_V1.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DataGen_V1.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -381,7 +382,8 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Python$PSpec.coverage" NAME="PSpec Coverage Results" MODIFIED="1582839340311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python$PSpec.coverage" NAME="PSpec Coverage Results" MODIFIED="1582890465276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python$DataGen_V1.coverage" NAME="DataGen_V1 Coverage Results" MODIFIED="1582917991529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python$main.coverage" NAME="main Coverage Results" MODIFIED="1581255223895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python$fftTest.coverage" NAME="fftTest Coverage Results" MODIFIED="1581268742479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python$finalSim.coverage" NAME="finalSim Coverage Results" MODIFIED="1582560960903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

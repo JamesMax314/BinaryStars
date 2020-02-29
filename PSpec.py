@@ -60,8 +60,6 @@ def genMasses(N, dmDen, uniDim, z=100):
     chis = np.linspace(0, chistar, nz)
     zs = results.redshift_at_comoving_radial_distance(chis)
     # Calculate array of delta_chi, and drop first and last points where things go singular
-    dchis = (chis[2:] - chis[:-2]) / 2
-    chis = chis[1:-1]
     zs = zs[1:-1]
 
     # Get the matter power spectrum interpolation object (based on RectBivariateSpline).
@@ -72,22 +70,13 @@ def genMasses(N, dmDen, uniDim, z=100):
 
     # Have a look at interpolated power spectrum results for a range of redshifts
     # Expect linear potentials to decay a bit when Lambda becomes important, and change from non-linear growth
-    # plt.figure(figsize=(8, 5))
     k = np.exp(np.log(10) * np.linspace(-4, 2, 200))
-    # zplot = [0, 0.5, 1, 4, 20, 100]
-    # for z in zplot:
-    #     plt.loglog(k, PK.P(z, k))
-    # plt.xlim([1e-4, kmax])
-    # plt.xlabel('k Mpc')
-    # plt.ylabel('$P_\Psi\, Mpc^{-3}$')
-    # plt.legend(['z=%s' % z for z in zplot])
-    # plt.show()
 
     spacing = uniDim / (N**3)
     spec = PK.P(z, k)
     masses = genPts(spec, N, spacing, dmDen)
     masses = np.reshape(masses, N**3)
-    tmpPts = np.linspace(-uniDim/2, uniDim/2, spacing)
+    # tmpPts = np.linspace(-uniDim/2, uniDim/2, spacing)
     # mps = np.meshgrid(tmpPts, tmpPts, tmpPts)
     pts = np.empty((N**3, 3))
     for i in range(N):
