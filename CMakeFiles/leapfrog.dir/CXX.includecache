@@ -29,12 +29,36 @@ vecMaths.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/vecMaths.h
 leapfrog.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/leapfrog.h
+tpm.h
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/tpm.h
 
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/leapfrog.h
 bodies.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.h
 trees.h
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/trees.h
+
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.h
+bodies.h
+-
+fftw3.h
+-
+cmath
+-
+bodies.h
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.h
+
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/tpm.h
+fftw3.h
+-
+cmath
+-
+map
+-
+bodies.h
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.h
+poisson.h
+/home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.h
 
 /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/trees.h
 vector

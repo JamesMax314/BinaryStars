@@ -4,6 +4,8 @@
 CMakeFiles/leapfrog.dir/leapfrog.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/bodies.h
 CMakeFiles/leapfrog.dir/leapfrog.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/leapfrog.cpp
 CMakeFiles/leapfrog.dir/leapfrog.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/leapfrog.h
+CMakeFiles/leapfrog.dir/leapfrog.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/poisson.h
+CMakeFiles/leapfrog.dir/leapfrog.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/tpm.h
 CMakeFiles/leapfrog.dir/leapfrog.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/trees.h
 CMakeFiles/leapfrog.dir/leapfrog.cpp.o: /home/james/Documents/University/ComputingProject/leapfrog_BarnesHut/src/vecMaths.h
 

@@ -24,7 +24,7 @@ def gmeshPos(pos, spacing, dim, numPts):
     return np.array(meshPoints, dtype=int)
 
 def toMesh(bodies, mSize, dim, point):
-    mesh = np.empty([mSize, mSize, mSize])
+    mesh = np.zeros([mSize, mSize, mSize])
     spacing = dim / mSize
     meshPos = np.empty(3, dtype=int)
     for i in range(bodies.shape[0]):
