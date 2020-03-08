@@ -21,9 +21,12 @@ def a(t):
 def ad(t):
     return aConst*2/3*t**(-1/3)
 
+def softening(R, N):
+    softening = 1.1 * N**(-0.28) * R
+
 
 # Parameters
-Rf = [0, 0.2]
+Rf = [0, 0.1, 0.2]  # 0.2 is too low mass based on Lyman alpha forrest
 aConst = 1.066e-12  # scale factor coefficient
 rho100 = 2.78e-21  # initial DM density in real units / kgm^-3
 t100 = get_time(100)  # 1.88e13  # start of sim at z=100 / s
@@ -38,7 +41,7 @@ dt = (t0 - t100)/numIter  # time step
 
 if __name__ == "__main__":
     print("Initialising over-density perturbations...")
-    pts, masses = PSpec.genMasses(numInitParticles, numParticles, rho100, uniDim, Rf[1])
+    pts, masses = PSpec.genMasses(numInitParticles, numParticles, rho100, uniDim, Rf[0])
     mass = rho100 * uniDim**3 / numParticles
     pts = pts / a(t100)  # convert to CC
     print("Initialising bodies...")
@@ -47,10 +50,15 @@ if __name__ == "__main__":
         # print(body.r)
         _arr_bodies = np.append(_arr_bodies,
                                 tree.body(mass, pts[i], [0] * 3, [0] * 3))
+        # _arr_bodies[-1].setSoftening()
 
     print("Running simulation...")
 
-    b = tree.TreePareticleMesh(_arr_bodies, gridSpacing / a(t100), uniDim / a(t100), rho100 * 100 * (a(t100)**3), numIter, dt, t100)
+    b = tree.TreePareticleMesh(_arr_bodies, gridSpacing / a(t100), uniDim / a(t100), rho100 * 50 * (a(t100)**3), numIter, dt, t100)
+
+    numTrees = np.arry(b[0].numTrees)
+    avrgR = np.array(b[0].avrgR)
+    avrgM = np.array(b[0].avrgM)
 
     colours = np.array([0.5, 0.5])
     colours = np.append(colours, np.array([0.5] * (len(_arr_bodies) - 2)))
@@ -70,7 +78,7 @@ if __name__ == "__main__":
     # plt.colorbar()
     # plt.show()
 
-    file = "WDM10.pkl"
+    file = "CDM12.pkl"
     outfile = open(file, 'wb')
-    pickle.dump((arrB, mass, uniDim, numIter, numParticles, t0, t100), outfile)
+    pickle.dump((arrB, mass, uniDim, numIter, numParticles, t0, t100, numTrees, avrgM, avrgR), outfile)
     outfile.close()

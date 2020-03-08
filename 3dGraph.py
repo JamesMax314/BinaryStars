@@ -13,12 +13,12 @@ import PSpec
 from matplotlib import rc
 
 if __name__ == "__main__":
-    file = "WDM10.pkl"
+    file = "CDM11.pkl"
     infile = open(file, 'rb')
-    (arrB, mass, uniDim, numIter, numParticles, t0, t100) = pickle.load(infile)
+    (arrB, mass, uniDim, numIter, numParticles, t0, t100, numTrees, avrgM, avrgR) = pickle.load(infile)
     infile.close()
 
-    point = 100
+    point = 999
     scale = 1 / (DataGen_V1.MPc)
     xs = arrB[:, point, 0] * scale
     ys = arrB[:, point, 1] * scale
@@ -26,8 +26,10 @@ if __name__ == "__main__":
 
     nGPts = 100
     dim = 100*50*DataGen_V1.MPc
+    dVol = (dim / nGPts)**3
+    dRho = DataGen_V1.MPc*mass / dVol
     grid = ps.genGrid(arrB[:, point, :], nGPts, dim)
-    col = PSpec.den(arrB, grid, dim, point)
+    col = PSpec.den(arrB, grid, dim, point) * dRho
 
     mpl.style.use('default')
 
@@ -39,8 +41,12 @@ if __name__ == "__main__":
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
 
-    scat = ax.scatter(xs, ys, zs, s=0.05, c=np.sqrt(col), cmap="plasma")
-    fig.colorbar(scat)
+    scat = ax.scatter(xs*1e-3, ys*1e-3, zs*1e-3, s=0.05, c=np.sqrt(col), cmap="magma")
+    cbaxes = fig.add_axes([0.3, .87, 0.5, 0.03])
+    cbar = fig.colorbar(scat, cax=cbaxes, orientation='horizontal')
+    cbar.ax.xaxis.set_ticks_position('top')
+    cbar.ax.xaxis.set_label_position('top')
+    cbar.set_label("$\sqrt{\\rho}$ / $kg$ $Mpc^{-3}$")
 
     # make the panes transparent
     ax.xaxis.set_pane_color((1.0, 1.0, 1.0, 0.0))
@@ -63,8 +69,10 @@ if __name__ == "__main__":
     ax.yaxis._axinfo['tick']['color'] = 'k'
     ax.zaxis._axinfo['tick']['color'] = 'k'
 
-    ax.set_xlabel('$x$ / $M$Pc')
-    ax.set_ylabel('$y$ / $M$Pc')
-    ax.set_zlabel('$z$ / $M$Pc')
+    ax.set_xlabel('$x$ / $Gpc$')
+    ax.set_ylabel('$y$ / $Gpc$')
+    ax.set_zlabel('$z$ / $Gpc$')
+
+    plt.savefig("..//Diagrams//CDM3D11.png", dpi=100, bbox_inches='tight')
 
     plt.show()
