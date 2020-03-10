@@ -282,7 +282,7 @@ if __name__ == "__main__":
     ax.set_xlim([kmin, kmax])
     ax.set_ylim([1e-18, 1e-10])
     ax.set_xlabel("$k / Mpc^{-1}$")
-    ax.set_ylabel("$P / Mpc^{-3}$")
+    ax.set_ylabel("$P / Mpc^{3}$")
     # plt.legend(['z=%s' % z for z in zplot])
     # plt.show()
     plt.savefig("..//Diagrams//InitSpec.png", dpi=300, bbox_inches='tight')

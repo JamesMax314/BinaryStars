@@ -120,7 +120,7 @@ if __name__ == "__main__":
     m_2 = 1e20
     r_1_2 = 14.6e9
     dim = 1e27
-    N = 10000
+    N = 50
 
     arr_bodies = two_body_init(m_1, m_2, r_1_2)
     arr_bodies = lfEngine.half_step(arr_bodies, dt)
@@ -134,10 +134,10 @@ if __name__ == "__main__":
     startTime = 1e9*365*24*3600
 
     # b = tree.basicRun(_arr_bodies, arrCent, uniDim, int(n_iter), dt)
-    spacing = dim / 50
+    spacing = dim / 2
     # tree.PMTestForce(_arr_bodies, spacing, dim, 0)
     # b = tree.particleMesh(_arr_bodies, spacing, dim, n_iter, dt)
-    b = tree.TreePareticleMesh(_arr_bodies, spacing, dim, dmDen*100, n_iter, dt, startTime)
+    b = tree.TreePareticleMesh(_arr_bodies, spacing, dim, dmDen/500000000000, n_iter, dt*1e250, startTime)
 
 
     colours = np.array([0.5, 0.5])

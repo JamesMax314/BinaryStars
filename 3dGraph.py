@@ -13,9 +13,9 @@ import PSpec
 from matplotlib import rc
 
 if __name__ == "__main__":
-    file = "CDM11.pkl"
+    file = ".//FinalData//WDM_1.pkl"
     infile = open(file, 'rb')
-    (arrB, mass, uniDim, numIter, numParticles, t0, t100, numTrees, avrgM, avrgR) = pickle.load(infile)
+    (arrB, mass, uniDim, gridSpacing, numIter, numParticles, t0, t100, numTrees, avrgM, avrgR) = pickle.load(infile)
     infile.close()
 
     point = 999
@@ -73,6 +73,6 @@ if __name__ == "__main__":
     ax.set_ylabel('$y$ / $Gpc$')
     ax.set_zlabel('$z$ / $Gpc$')
 
-    plt.savefig("..//Diagrams//CDM3D11.png", dpi=100, bbox_inches='tight')
+    # plt.savefig("..//Diagrams//CDM3D11.png", dpi=100, bbox_inches='tight')
 
     plt.show()

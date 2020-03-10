@@ -18,7 +18,7 @@ def computePS(pos, dim, nGPts):
     avrg = np.mean(grid)
     overDen = (grid - avrg) / (avrg)
     fGrid = np.fft.fftn(overDen)
-    freq = np.fft.fftfreq(nGPts, d=dim/nGPts)
+    # freq = np.fft.fftfreq(nGPts, d=dim/nGPts)
     fGrid_shift = np.abs(np.fft.fftshift(fGrid)*np.conj(np.fft.fftshift(fGrid)))
     x, y, z = np.meshgrid(np.arange(grid.shape[0]), np.arange(grid.shape[1]), np.arange(grid.shape[2]))
     R = np.sqrt((x-nGPts/2)**2 + (y-nGPts/2)**2 + (z-nGPts/2)**2)
@@ -26,6 +26,8 @@ def computePS(pos, dim, nGPts):
     f = lambda r : fGrid_shift[(R >= r-0.5) & (R < r+0.5)].mean()
     r = np.linspace(1, nGPts, nGPts)
     mean = np.vectorize(f)(r)
+    spacing = dim / nGPts
+    freq = np.linspace(2 * np.pi / (nGPts * spacing), 2 * np.pi / spacing, mean.shape[0])
 
     return mean, freq
 

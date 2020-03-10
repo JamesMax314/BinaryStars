@@ -102,7 +102,7 @@ def periodic(loc, mass, dim):
 
 
 if __name__ == "__main__":
-    dt = 4e15  # 1e8 #1e2 #1e2
+    dt = 4e2 #15  # 1e8 #1e2 #1e2
     n_iter = 1000
 
     m_1 = 1e20
@@ -145,10 +145,10 @@ if __name__ == "__main__":
     arrCent = np.array([0, 0, 0])
     uniDim = np.array([1e15] * 3)
     uniDim = np.array([3e15] * 3)
-    # b = tree.basicRun(_arr_bodies, arrCent, uniDim, int(n_iter), dt)
+    b = tree.basicRun(_arr_bodies, arrCent, [dim]*3, int(n_iter), dt)
     spacing = dim / 30
     # tree.PMTestForce(_arr_bodies, spacing, dim, 0)
-    b = tree.particleMesh(_arr_bodies, spacing, dim, n_iter, dt)
+    # b = tree.particleMesh(_arr_bodies, spacing, dim, n_iter, dt)
     # b = tree.TreePareticleMesh(_arr_bodies, spacing, dim, dmDen*10, n_iter, dt)
     print("done")
     # colours = np.array([0, 0.25])
@@ -163,7 +163,7 @@ if __name__ == "__main__":
     #     forces[i] = acc * mass
     mation = anim.twoD(b, colours, dim, 1e-12, 10)
     mation.animate(9)
-    mation.run("test2.mp4")
+    mation.run("test_s2.mp4")
     plt.show()
 
     # plt.plot(forces[1, :, 0])

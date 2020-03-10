@@ -41,20 +41,21 @@ dt = (t0 - t100)/numIter  # time step
 mass = rho100 * uniDim**3 / numParticles  # Particle mass
 
 if __name__ == "__main__":
-    print("Initialising over-density perturbations...")
-    pts, masses = PSpec.genMasses(numInitParticles, numParticles, rho100, uniDim, Rf[0])
-    pts = pts / a(t100)  # convert to CC
+    print("Loading Bodies")
+    file = ".//InitBods//WDM.pkl"
+    infile = open(file, 'rb')
+    (pts, mass) = pickle.load(infile)
+    infile.close()
+
     print("Initializing bodies...")
     _arr_bodies = np.array([])
     for i in range(numParticles):
         # print(body.r)
         _arr_bodies = np.append(_arr_bodies,
                                 tree.body(mass, pts[i], [0] * 3, [0] * 3))
-        # _arr_bodies[-1].setSoftening()
 
     print("Running simulation...")
-
-    b = tree.TreePareticleMesh(_arr_bodies, gridSpacing / a(t100), uniDim / a(t100), rho100 * 20 * (a(t100)**3), numIter, dt, t100)
+    b = tree.TreePareticleMesh(_arr_bodies, gridSpacing / a(t100), uniDim / a(t100), rho100 * (a(t100)**3), numIter, dt, t100)
     # b = tree.particleMesh(_arr_bodies, gridSpacing / a(t100), uniDim / a(t100), numIter, dt)
 
     numTrees = np.array(b[0].numTrees)
@@ -79,7 +80,7 @@ if __name__ == "__main__":
     # plt.colorbar()
     # plt.show()
 
-    file = ".//FinalData//CDM_1.pkl"
+    file = ".//FinalData//WDM_1_smallClusters.pkl"
     outfile = open(file, 'wb')
     pickle.dump((arrB, mass, uniDim, gridSpacing, numIter, numParticles, t0, t100, numTrees, avrgM, avrgR), outfile)
     outfile.close()
