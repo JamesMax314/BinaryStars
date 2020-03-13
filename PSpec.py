@@ -263,12 +263,21 @@ if __name__ == "__main__":
 
     rc('font', **{'family': 'sans-serif', 'sans-serif': ['Helvetica']})
     rc('text', usetex=True)
-
+    matplotlib.use("pgf")
+    matplotlib.rcParams.update({
+        "pgf.texsystem": "pdflatex",
+        'font.family': 'serif',
+        'font.size': 8,
+        'text.usetex': True,
+        'pgf.rcfonts': False,
+    })
+    width = 3.28162  # in inches
+    fig = plt.figure(figsize=(width, width * 0.85))
     ax = plt.subplot(111)
 
     # for z in zplot:
-    ax.loglog(k, PK.P(zplot[0], k) * np.exp(-k * Rf / 2 - ((k * Rf) ** 2) / 2), "--", c="k")
-    ax.loglog(k, PK.P(zplot[0], k), "-", c="k")
+    ax.loglog(k, PK.P(zplot[0], k) * np.exp(-k * Rf / 2 - ((k * Rf) ** 2) / 2), "--", c="k", lw=1)
+    ax.loglog(k, PK.P(zplot[0], k), "-", c="k", lw=1)
 
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
@@ -281,11 +290,11 @@ if __name__ == "__main__":
 
     ax.set_xlim([kmin, kmax])
     ax.set_ylim([1e-18, 1e-10])
-    ax.set_xlabel("$k / Mpc^{-1}$")
-    ax.set_ylabel("$P / Mpc^{3}$")
+    ax.set_xlabel("$k / M$pc$^{-1}$")
+    ax.set_ylabel("$P / M$pc$^{3}$")
     # plt.legend(['z=%s' % z for z in zplot])
     # plt.show()
-    plt.savefig("..//Diagrams//InitSpec.png", dpi=300, bbox_inches='tight')
+    plt.savefig("..//Diagrams//InitSpec.pgf", bbox_inches='tight', pad_inches=0.1)
 
     # spec = PK.P(100, k)
     # genPts(spec, 20, 2, 1000, 0, 100)

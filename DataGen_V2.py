@@ -42,7 +42,7 @@ mass = rho100 * uniDim**3 / numParticles  # Particle mass
 
 if __name__ == "__main__":
     print("Loading Bodies")
-    file = ".//InitBods//WDM.pkl"
+    file = ".//InitBods//CDM.pkl"
     infile = open(file, 'rb')
     (pts, mass) = pickle.load(infile)
     infile.close()
@@ -55,7 +55,7 @@ if __name__ == "__main__":
                                 tree.body(mass, pts[i], [0] * 3, [0] * 3))
 
     print("Running simulation...")
-    b = tree.TreePareticleMesh(_arr_bodies, gridSpacing / a(t100), uniDim / a(t100), rho100 * (a(t100)**3), numIter, dt, t100)
+    b = tree.TreePareticleMesh(_arr_bodies, gridSpacing / a(t100), uniDim / a(t100), rho100 * 50 * (a(t100)**3), numIter, dt, t100)
     # b = tree.particleMesh(_arr_bodies, gridSpacing / a(t100), uniDim / a(t100), numIter, dt)
 
     numTrees = np.array(b[0].numTrees)
@@ -80,7 +80,7 @@ if __name__ == "__main__":
     # plt.colorbar()
     # plt.show()
 
-    file = ".//FinalData//WDM_1_smallClusters.pkl"
+    file = ".//FinalData//CDM_1_meta.pkl"
     outfile = open(file, 'wb')
     pickle.dump((arrB, mass, uniDim, gridSpacing, numIter, numParticles, t0, t100, numTrees, avrgM, avrgR), outfile)
     outfile.close()

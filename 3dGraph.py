@@ -13,7 +13,7 @@ import PSpec
 from matplotlib import rc
 
 if __name__ == "__main__":
-    file = ".//FinalData//WDM_1.pkl"
+    file = ".//FinalData//CDM_1.pkl"
     infile = open(file, 'rb')
     (arrB, mass, uniDim, gridSpacing, numIter, numParticles, t0, t100, numTrees, avrgM, avrgR) = pickle.load(infile)
     infile.close()
@@ -25,9 +25,9 @@ if __name__ == "__main__":
     zs = arrB[:, point, 2] * scale
 
     nGPts = 100
-    dim = 100*50*DataGen_V1.MPc
+    dim = 100*50*DataGen_V1.MPc  # in m
     dVol = (dim / nGPts)**3
-    dRho = DataGen_V1.MPc*mass / dVol
+    dRho = mass / dVol
     grid = ps.genGrid(arrB[:, point, :], nGPts, dim)
     col = PSpec.den(arrB, grid, dim, point) * dRho
 
@@ -37,16 +37,26 @@ if __name__ == "__main__":
     ## for Palatino and other serif fonts use:
     # rc('font',**{'family':'serif','serif':['Palatino']})
     rc('text', usetex=True)
+    # matplotlib.use("pgf")
+    matplotlib.rcParams.update({
+        "pgf.texsystem": "pdflatex",
+        'font.family': 'serif',
+        'font.size': 12,
+        'text.usetex': True,
+        'pgf.rcfonts': False,
+    })
+    # width = 3.28162  # in inches
+    # fig = plt.figure(figsize=(width, width * 0.85))
 
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
 
-    scat = ax.scatter(xs*1e-3, ys*1e-3, zs*1e-3, s=0.05, c=np.sqrt(col), cmap="magma")
-    cbaxes = fig.add_axes([0.3, .87, 0.5, 0.03])
+    scat = ax.scatter(xs*1e-3, ys*1e-3, zs*1e-3, s=1, c=np.sqrt(col)*10**13, linewidth=0, cmap="magma")
+    cbaxes = fig.add_axes([0.3, .82, 0.5, 0.03])
     cbar = fig.colorbar(scat, cax=cbaxes, orientation='horizontal')
     cbar.ax.xaxis.set_ticks_position('top')
     cbar.ax.xaxis.set_label_position('top')
-    cbar.set_label("$\sqrt{\\rho}$ / $kg$ $Mpc^{-3}$")
+    cbar.set_label("$\sqrt{\\rho}$ / $10^{-13}$$k$g$^{1/2}$m$^{-3/2}$")
 
     # make the panes transparent
     ax.xaxis.set_pane_color((1.0, 1.0, 1.0, 0.0))
@@ -69,10 +79,10 @@ if __name__ == "__main__":
     ax.yaxis._axinfo['tick']['color'] = 'k'
     ax.zaxis._axinfo['tick']['color'] = 'k'
 
-    ax.set_xlabel('$x$ / $Gpc$')
-    ax.set_ylabel('$y$ / $Gpc$')
-    ax.set_zlabel('$z$ / $Gpc$')
+    ax.set_xlabel('$x$ / $G$pc')
+    ax.set_ylabel('$y$ / $G$pc')
+    ax.set_zlabel('$z$ / $G$pc')
 
-    # plt.savefig("..//Diagrams//CDM3D11.png", dpi=100, bbox_inches='tight')
+    plt.savefig("..//Diagrams//CDM3D11.png", dpi=300)
 
-    plt.show()
+    # plt.show()

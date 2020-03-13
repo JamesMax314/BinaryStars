@@ -287,6 +287,16 @@ if __name__ == "__main__":
     ## for Palatino and other serif fonts use:
     # rc('font',**{'family':'serif','serif':['Palatino']})
     rc('text', usetex=True)
+    matplotlib.use("pgf")
+    matplotlib.rcParams.update({
+        "pgf.texsystem": "pdflatex",
+        'font.family': 'serif',
+        'font.size': 8,
+        'text.usetex': True,
+        'pgf.rcfonts': False,
+    })
+    width = 3.28162  # in inches
+    fig = plt.figure(figsize=(width, width * 0.85))
 
     arr_bodies = two_body_init(m_1, m_2, r_1_2)
     arr_bodies = lfEngine.half_step(arr_bodies, dt)
@@ -372,17 +382,17 @@ if __name__ == "__main__":
     ax1_inset = ax.inset_axes([0.5, 0.5, 0.5, 0.5])
     ax.scatter(nIter, np.array(average)/1e9, c="k", s=1)
 
-    ax1_inset.plot(arrB[0, :, 0]*1e-9, arrB[0, :, 1]*1e-9, "-", c="k")
-    ax1_inset.plot(arrB[1, :, 0]*1e-9, arrB[1, :, 1]*1e-9, "--", c="k")
-    ax1_inset.scatter(arrB[0, -1, 0]*1e-9, arrB[0, -1, 1]*1e-9, c="k")
-    ax1_inset.scatter(arrB[1, -1, 0]*1e-9, arrB[1, -1, 1]*1e-9, c="k")
+    ax1_inset.plot(arrB[0, :, 0]*1e-9, arrB[0, :, 1]*1e-9, "-", c="k", linewidth=1)
+    ax1_inset.plot(arrB[1, :, 0]*1e-9, arrB[1, :, 1]*1e-9, "--", c="k", linewidth=1)
+    ax1_inset.scatter(arrB[0, -1, 0]*1e-9, arrB[0, -1, 1]*1e-9, c="k", s=3)
+    ax1_inset.scatter(arrB[1, -1, 0]*1e-9, arrB[1, -1, 1]*1e-9, c="k", s=3)
 
     # ax.plot(nIter/1000, obj_Model.f(obj_Model, nIter, obj_Model.arr_Vals), c="k")
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
     ax.set_xlabel("Number of Iterations")
-    ax.set_ylabel("RMS Error $/ Gm$")
-    ax1_inset.set_xlabel("$x / Gm$")
-    ax1_inset.set_ylabel("$y/ Gm$")
+    ax.set_ylabel("RMS Error $/ G$m")
+    ax1_inset.set_xlabel("$x / G$m")
+    ax1_inset.set_ylabel("$y/ G$m")
     # plt.show()
-    plt.savefig("..//Diagrams//Conv.png", dpi=300, bbox_inches='tight')
+    plt.savefig("..//Diagrams//Conv.pgf", bbox_inches='tight', pad_inches=0.1)
